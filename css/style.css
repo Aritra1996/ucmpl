@@ -1,0 +1,267 @@
+/*
+ Theme Name:   Total Business Child
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Total Business Child Theme
+ Author:       John Doe
+ Author URI:   http://example.com
+ Template:     totalbusiness
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  totalbusiness-child
+*/
+.totalbusiness-background-image{background-repeat: no-repeat !important; background-size: 100% !important;}
+.totalbusiness-skin-custome i, .totalbusiness-skin-custome .totalbusiness-flex-prev, .totalbusiness-skin-custome .totalbusiness-flex-next {
+    color: #ffffff !important;
+ }
+ #whyus_page .totalbusiness-styled-box-body {padding: 18px 32px 15px !important;}
+  #whyus_page p{margin-bottom: -10px;}
+ #whyus_page h3{margin-bottom: 10px !important;}
+ input.wpcf7-form-control.wpcf7-text.wpcf7-tel.wpcf7-validates-as-tel {
+    padding: 12px 19px !important; 
+    width: 100%  !important;
+    font-size: 13px  !important;
+    background-color: #f5f5f5  !important;
+    border: none  !important;
+}
+.wpcf7 span.wpcf7-form-control-wrap {
+     padding-right: 0px;}
+
+.wpcf7 input[type="submit"] {
+    padding: 12px 24px !important;
+}
+
+.totalbusiness-button, input[type="button"], input[type="submit"] {
+    font-size: 16px !important;
+}
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 input[type="password"], .wpcf7 textarea {
+    padding: 12px 19px;
+    margin-top: 4px;
+}
+
+/*#popmake-7367{
+	    min-width: 0% !important;
+    max-width: 100%  !important;
+    top: 714px  !important;
+    left: 683.688px !important;
+    opacity: 1  !important;
+}
+*/
+
+.blog-item-holder .totalbusiness-blog-full .totalbusiness-blog-content {
+    color: #515151;
+}
+@media screen and (min-width: 1200px){
+	.totalbusiness-logo {margin-bottom: 5px !important;margin-top: 5px !important;}
+	.totalbusiness-fixed-header .totalbusiness-logo img {max-height: 54px !important;}
+}
+@media (min-width: 993px) and (max-width: 1199px){
+	.section-container, .totalbusiness-item-start-content, .totalbusiness-parallax-wrapper, .totalbusiness-color-wrapper {padding-top: 20px;}
+	.totalbusiness-color-wrapper, .totalbusiness-parallax-wrapper, .totalbusiness-full-size-wrapper {padding-bottom: 0px;}
+	.totalbusiness-item-title-wrapper.totalbusiness-extra-large .totalbusiness-item-title {font-size: 48px;}
+	.totalbusiness-skin-custome h1, .totalbusiness-skin-custome h2, .totalbusiness-skin-custome h3, .totalbusiness-skin-custome h4, .totalbusiness-skin-custome h5, .totalbusiness-skin-custome h6, .totalbusiness-skin-custome .totalbusiness-skin-title, .totalbusiness-skin-custome .totalbusiness-skin-title a {
+    padding-top: 20px;}
+         #whyus_page h3{margin-top: 15px !important;}  
+}
+@media (min-width: 768px) and (max-width: 992px){
+	/*.totalbusiness-heading-shortcode{font-size: 30px !important;}*/
+	.stunning-item-caption h2{font-size: 27px !important;}
+.stunning-item-caption h6{font-size: 17px !important;}
+.totalbusiness-logo-inner a img{height: 99px;}
+.list-with-icon-title h6{font-size: 23px !important;}
+.list-with-icon {margin-bottom: 10px;}
+#content-section-3 #totalbusiness-parallax-wrapper-2{padding-top: 115px !important;padding-bottom: 110px !important;}
+.section-container, .totalbusiness-item-start-content, .totalbusiness-parallax-wrapper, .totalbusiness-color-wrapper {padding-top: 0px;}
+.totalbusiness-color-wrapper, .totalbusiness-parallax-wrapper, .totalbusiness-full-size-wrapper {padding-bottom: 0px;}
+.three .totalbusiness-item{margin-top: 20px;}
+#content-section-2{margin-top: 20px;}
+.totalbusiness-button-on h1{font-size: 40px!important;}
+#content-section-1 #totalbusiness-parallax-wrapper-1{padding-top: 120px !important;padding-bottom: 95px !important;background-repeat: no-repeat;}
+.totalbusiness-skin-custome h1, .totalbusiness-skin-custome h2, .totalbusiness-skin-custome h3, .totalbusiness-skin-custome h4, .totalbusiness-skin-custome h5, .totalbusiness-skin-custome h6, .totalbusiness-skin-custome .totalbusiness-skin-title, .totalbusiness-skin-custome .totalbusiness-skin-title a {
+    padding-top: 20px;}
+ #whyus_page h3{margin-top: 15px !important;font-size: 14px!important}  
+
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+	.totalbusiness-logo-inner a img{height: 70px;}
+	h2{	font-size: 33px !important;	}
+	body .container {max-width: 615px !important;}
+	.totalbusiness-process-wrapper.totalbusiness-horizontal-process .totalbusiness-process-tab .process-line {display: none;}
+	.stunning-item-caption h2{font-size: 24px !important;}
+.stunning-item-caption h6{font-size: 18px !important;}
+#totalbusiness-responsive-navigation.dl-menuwrapper button:hover, #totalbusiness-responsive-navigation.dl-menuwrapper button.dl-active, #totalbusiness-responsive-navigation.dl-menuwrapper ul {
+ right: 0;
+}
+.list-with-icon.totalbusiness-right .list-with-icon-image, .list-with-icon.totalbusiness-right .list-with-icon-icon {display: none;}
+.list-with-icon.totalbusiness-left .list-with-icon-image, .list-with-icon.totalbusiness-left .list-with-icon-icon {	display: none;}
+.list-with-icon.totalbusiness-right {text-align: center;}
+.list-with-icon.totalbusiness-left {text-align: center;}
+.list-with-icon-title h6{font-size: 23px !important;}
+.list-with-icon {margin-bottom: 15px;}
+#content-section-3 #totalbusiness-parallax-wrapper-2{padding-top: 110px !important;padding-bottom: 85px !important;}
+.section-container, .totalbusiness-item-start-content, .totalbusiness-parallax-wrapper, .totalbusiness-color-wrapper {padding-top: 0px;}
+.totalbusiness-color-wrapper, .totalbusiness-parallax-wrapper, .totalbusiness-full-size-wrapper {padding-bottom: 0px; }
+.totalbusiness-type-1{margin-bottom: 5px !important;}
+.totalbusiness-item-title-wrapper.totalbusiness-extra-large .totalbusiness-item-title {font-size: 42px;}
+.three .totalbusiness-item{margin-top: 20px;}
+#content-section-2{margin-top: 20px;}
+.totalbusiness-button-on h1{font-size: 32px!important;}
+#content-section-1 #totalbusiness-parallax-wrapper-1{padding-top: 100px !important;padding-bottom: 69px !important;background-repeat: no-repeat;}
+.totalbusiness-skin-custome h1, .totalbusiness-skin-custome h2, .totalbusiness-skin-custome h3, .totalbusiness-skin-custome h4, .totalbusiness-skin-custome h5, .totalbusiness-skin-custome h6, .totalbusiness-skin-custome .totalbusiness-skin-title, .totalbusiness-skin-custome .totalbusiness-skin-title a {
+    padding-top: 30px;}
+     #whyus_page h3{margin-top: 15px !important;}  
+}
+@media (min-width: 280px) and (max-width: 480px){
+	h2{font-size: 34px !important;}
+.wpb_row .master-slider-parent *, .master-slider-parent * {box-sizing: content-box; font-size: 24px;}
+	/*.totalbusiness-heading-shortcode{font-size: 32px !important;}*/
+	.stunning-item-caption h2{font-size: 22px !important;}
+.stunning-item-caption h6{font-size: 17px !important;}
+	.totalbusiness-logo-inner a img{height: 49px;}
+	.dl-menuwrapper > .dl-menu, .dl-menuwrapper > .dl-submenu { margin: 20px 25px 0px }
+	.totalbusiness-column-service-item.totalbusiness-type-1 .column-service-image {margin-right: 0px;}
+.totalbusiness-item {margin: 0px 10px 20px;}
+.totalbusiness-process-wrapper.totalbusiness-horizontal-process .totalbusiness-process-tab .process-line {display: none;}
+.totalbusiness-skin-box{width: 290px !important;}
+.totalbusiness-skin-stunning-text-small{padding-top: 15px !important;}
+.totalbusiness-skin-custome, .totalbusiness-skin-custome .totalbusiness-skin-content{padding-top: 10px !important;}
+/*.totalbusiness-service-half-background-item .totalbusiness-half-left, .totalbusiness-service-half-background-item .totalbusiness-half-right {padding: 45px 0px;}*/
+/*.totalbusiness-skin-custome h1, .totalbusiness-skin-custome h2, .totalbusiness-skin-custome h3, .totalbusiness-skin-custome h4, .totalbusiness-skin-custome h5, .totalbusiness-skin-custome h6, .totalbusiness-skin-custome .totalbusiness-skin-title, .totalbusiness-skin-custome .totalbusiness-skin-title a{margin-top: 64px;}*/
+.list-with-icon.totalbusiness-right {text-align: center;}
+.list-with-icon.totalbusiness-left {text-align: center;}
+.list-with-icon.totalbusiness-right .list-with-icon-image, .list-with-icon.totalbusiness-right .list-with-icon-icon {display: none;}
+.list-with-icon.totalbusiness-left .list-with-icon-image, .list-with-icon.totalbusiness-left .list-with-icon-icon {display: none;}
+.totalbusiness-content-item h4{margin-top: 55px;}
+.list-with-icon {margin-bottom: 15px;}
+#content-section-3 #totalbusiness-parallax-wrapper-2{padding-top: 65px !important;padding-bottom: 60px !important;}
+.totalbusiness-item-title-wrapper.totalbusiness-extra-large .totalbusiness-item-title {font-size: 38px;}
+.totalbusiness-type-1{margin-bottom: 5px !important;}
+.totalbusiness-color-wrapper, .totalbusiness-parallax-wrapper, .totalbusiness-full-size-wrapper {padding-bottom: 0; background-repeat: no-repeat !important;}
+h3{font-size: 29px;}
+.totalbusiness-button-on h1{font-size: 32px!important;}
+#content-section-1 #totalbusiness-parallax-wrapper-1{padding-top: 30px !important;padding-bottom: 20px !important;background-repeat: no-repeat !important;}
+.totalbusiness-skin-custome h1, .totalbusiness-skin-custome h2, .totalbusiness-skin-custome h3, .totalbusiness-skin-custome h4, .totalbusiness-skin-custome h5, .totalbusiness-skin-custome h6, .totalbusiness-skin-custome .totalbusiness-skin-title, .totalbusiness-skin-custome .totalbusiness-skin-title a {
+    padding-top: 21px;}
+   #whyus_page h3{margin-top: 15px !important;}  
+.pum-theme-7363 .pum-title, .pum-theme-enterprise-blue .pum-title{
+	line-height: 50px;
+}
+	.pum-container.pum-responsive.pum-responsive-medium {
+    margin-left: 0%;
+    width: 100%;
+}
+	#popmake-7367{
+	    min-width: 20% !important;
+    max-width: 100%  !important;
+    top: 0% !important;
+    left: 10% !important;
+    opacity: 1  !important;
+}
+	
+}
+.single-post{
+	color: black !important;
+}
+.content-wrapper{
+	/* color: black !important; */
+}
+
+#tank .totalbusiness-item-title-wrapper.totalbusiness-item {
+	margin-bottom: 30px;}
+
+element.style {
+}
+#tank h3 {
+/*     font-size: 43px; */
+    color: #2a345b;
+}
+#tank-video .totalbusiness-item-title-wrapper .totalbusiness-item-title {
+	color: #2a345b;
+}
+#tank-form .totalbusiness-item.totalbusiness-content-item{
+	background: #9d301c;
+    padding: 20px 83px;
+}
+#tank-form .totalbusiness-item-title-wrapper.totalbusiness-item.totalbusiness-center.totalbusiness-large{
+	background-color: #bb4632;
+	padding: 18px;
+	margin: 0;
+}
+#tank-form .totalbusiness-item{
+	margin: 0;
+}
+#tank-form div.wpcf7{
+	width: 96%;
+}
+#tank-form .wpcf7 input[type="submit"] {
+    padding: 12px 24px !important;
+    background: #9d301c;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 7px;
+}
+/*  */
+
+#contact-form .totalbusiness-item.totalbusiness-content-item{
+	background: #9d301c;
+    padding: 20px 83px;
+}
+#contact-form .totalbusiness-item-title-wrapper.totalbusiness-item.totalbusiness-center.totalbusiness-large{
+	background-color: #bb4632;
+	padding: 18px;
+	margin: 0;
+}
+#contact-form .totalbusiness-item{
+	margin: 0;
+}
+#contact-form div.wpcf7{
+	width: 96%;
+}
+#contact-form .wpcf7 input[type="submit"] {
+    padding: 12px 24px !important;
+    background: #9d301c;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 7px;
+}
+
+#tank-video1 .mejs-container.wp-video-shortcode.mejs-video{
+	width:100% !important;
+}
+#tank-video1 .wp-video{
+	width:100% !important;
+}
+#tank-video1{
+/* 	width: 100%; */
+	margin: 0px 0px;
+}
+@media(max-width: 767px){
+
+.totalbusiness-item-title-wrapper .totalbusiness-item-title {
+	font-size: 21px;}
+	#tank .totalbusiness-item.totalbusiness-content-item {
+    margin-bottom: 30px !important;
+}
+	#tank-form div.wpcf7 {
+    width: 85%;
+}
+	#tank-form .totalbusiness-item.totalbusiness-content-item {
+    padding: 17px;
+}
+/* 	 */
+	
+	#contact-form div.wpcf7 {
+    width: 85%;
+}
+	#contact-form .totalbusiness-item.totalbusiness-content-item {
+    padding: 17px;
+}
+	
+	
+}
+@media(max-width: 991px){
+	#tank h3 {
+		font-size: 25px;}
+}
