@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - UCMPL | Plastic Packaging Solutions for Global Export</title>
+    <meta name="description" content="Explore UCMPL's comprehensive range of plastic packaging products including caps, bottles, closures, automotive components, and pharmaceutical packaging for global export.">
+    <meta name="keywords" content="plastic products, packaging solutions, bottle caps, closures, automotive components, pharmaceutical packaging, export products">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Products - UCMPL | Plastic Packaging Solutions for Global Export">
+    <meta property="og:description" content="Explore UCMPL's comprehensive range of plastic packaging products for global export.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ucmpl.com/products">
+    <meta property="og:image" content="assets/images/og-products.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Custom CSS for Products Page -->
+    <style>
+        /* Products Page Specific Styles */
+        .page-header {
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #2a345b 100%);
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+        }
+        
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Product Categories */
+        .product-categories {
+            background: var(--primary-bg);
+            padding: 5rem 0;
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-tab {
+            padding: 0.75rem 1.5rem;
+            background: var(--secondary-bg);
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .category-tab.active,
+        .category-tab:hover {
+            background: var(--gradient-primary);
+            color: var(--primary-bg);
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: var(--secondary-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--brand-primary);
+        }
+        
+        .product-image {
+            height: 250px;
+            background: var(--gradient-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--brand-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 136, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .product-card:hover .product-image::before {
+            opacity: 1;
+        }
+        
+        .product-content {
+            padding: 2rem;
+        }
+        
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .product-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-features li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--brand-primary);
+            font-weight: bold;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .btn-product {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .product-specs {
+            background: var(--primary-bg);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Product Details Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: var(--secondary-bg);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .modal-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Export Capabilities */
+        .export-capabilities {
+            background: var(--secondary-bg);
+            padding: 5rem 0;
+        }
+        
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .capability-card {
+            background: var(--primary-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .capability-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--brand-primary);
+        }
+        
+        .capability-icon {
+            font-size: 3rem;
+            color: var(--brand-primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .capability-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .capability-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Quality Standards */
+        .quality-standards {
+            background: var(--gradient-dark);
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .quality-standards::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%2300d4ff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .standard-card {
+            background: rgba(26, 31, 46, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .standard-card:hover {
+            background: rgba(0, 212, 255, 0.05);
+            border-color: var(--brand-primary);
+            transform: translateY(-5px);
+        }
+        
+        .standard-icon {
+            font-size: 2.5rem;
+            color: var(--brand-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .standard-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .standard-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .category-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-industry"></i> UCMPL
+                </a>
+                
+                <nav class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html" class="active">Products</a>
+                    <a href="global-presence.html">Global Presence</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title scroll-reveal">Our Products</h1>
+            <p class="page-subtitle scroll-reveal">Comprehensive range of plastic packaging solutions for global export</p>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="product-categories">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Product Categories</h2>
+                <p class="section-subtitle">Explore our diverse range of high-quality plastic packaging solutions</p>
+            </div>
+            
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Products</button>
+                <button class="category-tab" data-category="caps">Caps & Closures</button>
+                <button class="category-tab" data-category="bottles">Bottles & Containers</button>
+                <button class="category-tab" data-category="automotive">Automotive</button>
+                <button class="category-tab" data-category="pharmaceutical">Pharmaceutical</button>
+                <button class="category-tab" data-category="pallets">Pallets</button>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Plastic Caps & Closures -->
+                <div class="product-card scroll-reveal" data-category="caps">
+                    <div class="product-image">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Plastic Caps & Closures</h3>
+                        <p class="product-description">Premium quality bottle caps, jar lids, and closure systems designed for FMCG, food & beverage, and pharmaceutical industries.</p>
+                        <ul class="product-features">
+                            <li>Child-resistant closures</li>
+                            <li>Tamper-evident seals</li>
+                            <li>Custom colors and sizes</li>
+                            <li>FDA approved materials</li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-product" onclick="openModal('caps')">View Details</button>
+                            <span class="product-specs">HDPE/PP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HDPE & PP Bottles -->
+                <div class="product-card scroll-reveal" data-category="bottles">
+                    <div class="product-image">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">HDPE & PP Bottles</h3>
+                        <p class="product-description">High-density polyethylene and polypropylene bottles for various industrial and consumer applications with excellent durability.</p>
+                        <ul class="product-features">
+                            <li>Chemical resistance</li>
+                            <li>UV protection</li>
+                            <li>Custom shapes and sizes</li>
+                            <li>Food grade materials</li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-product" onclick="openModal('bottles')">View Details</button>
+                            <span class="product-specs">HDPE/PP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Automotive Components -->
+                <div class="product-card scroll-reveal" data-category="automotive">
+                    <div class="product-image">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Automotive Components</h3>
+                        <p class="product-description">Precision-molded automotive parts and components meeting international quality standards for the automotive industry.</p>
+                        <ul class="product-features">
+                            <li>High precision molding</li>
+                            <li>Heat resistant materials</li>
+                            <li>Custom tooling available</li>
+                            <li>ISO certified production</li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-product" onclick="openModal('automotive')">View Details</button>
+                            <span class="product-specs">ABS/PC</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Packaging Containers -->
+                <div class="product-card scroll-reveal" data-category="bottles">
+                    <div class="product-image">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Packaging Containers</h3>
+                        <p class="product-description">Custom plastic containers and jars for pharmaceutical, cosmetic, and food packaging needs with superior quality.</p>
+                        <ul class="product-features">
+                            <li>Custom design solutions</li>
+                            <li>Multiple material options</li>
+                            <li>Batch consistency</li>
+                            <li>Quick turnaround times</li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-product" onclick="openModal('containers')">View Details</button>
+                            <span class="product-specs">PET/HDPE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plastic Pallets -->
+                <div class="product-card scroll-reveal" data-category="pallets">
+                    <div class="product-image">
+                        <i class="fas fa-th"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Plastic Pallets</h3>
+                        <p class="product-description">Durable and lightweight plastic pallets for efficient material handling and logistics operations.</p>
+                        <ul class="product-features">
+                            <li>Heavy-duty construction</li>
+                            <li>Hygienic and washable</li>
+                            <li>Nestable design</li>
+                            <li>Export quality standards</li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-product" onclick="openModal('pallets')">View Details</button>
+                            <span class="product-specs">HDPE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pharmaceutical Packaging -->
+                <div class="product-card scroll-reveal" data-category="pharmaceutical">
+                    <div class="product-image">
+                        <i class="fas fa-medkit"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Pharmaceutical Packaging</h3>
+                        <p class="product-description">FDA-approved pharmaceutical containers and packaging solutions for the global healthcare industry.</p>
+                        <ul class="product-features">
+                            <li>FDA approved materials</li>
+                            <li>Tamper-evident features</li>
+                            <li>Child-resistant options</li>
+                            <li>Batch traceability</li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-product" onclick="openModal('pharmaceutical')">View Details</button>
+                            <span class="product-specs">FDA Approved</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Export Capabilities -->
+    <section class="export-capabilities">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Export Capabilities</h2>
+                <p class="section-subtitle">Comprehensive export solutions for global markets</p>
+            </div>
+            
+            <div class="capabilities-grid">
+                <div class="capability-card scroll-reveal">
+                    <i class="fas fa-shipping-fast capability-icon"></i>
+                    <h3 class="capability-title">Global Shipping</h3>
+                    <p class="capability-description">Efficient logistics network delivering products to 20+ countries with reliable and timely shipments worldwide.</p>
+                </div>
+                
+                <div class="capability-card scroll-reveal">
+                    <i class="fas fa-certificate capability-icon"></i>
+                    <h3 class="capability-title">Quality Certifications</h3>
+                    <p class="capability-description">ISO 9001:2015 certified manufacturing with FDA, CE, and other international quality certifications.</p>
+                </div>
+                
+                <div class="capability-card scroll-reveal">
+                    <i class="fas fa-tools capability-icon"></i>
+                    <h3 class="capability-title">Custom Manufacturing</h3>
+                    <p class="capability-description">Tailored solutions meeting specific client requirements with custom tooling and design capabilities.</p>
+                </div>
+                
+                <div class="capability-card scroll-reveal">
+                    <i class="fas fa-headset capability-icon"></i>
+                    <h3 class="capability-title">24/7 Support</h3>
+                    <p class="capability-description">Round-the-clock customer support ensuring seamless communication and quick issue resolution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Standards -->
+    <section class="quality-standards">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Quality Standards</h2>
+                <p class="section-subtitle">Meeting international quality requirements for global export</p>
+            </div>
+            
+            <div class="standards-grid">
+                <div class="standard-card scroll-reveal">
+                    <i class="fas fa-check-circle standard-icon"></i>
+                    <h4 class="standard-title">ISO 9001:2015</h4>
+                    <p class="standard-description">Quality Management System certification ensuring consistent quality standards.</p>
+                </div>
+                
+                <div class="standard-card scroll-reveal">
+                    <i class="fas fa-shield-alt standard-icon"></i>
+                    <h4 class="standard-title">FDA Approved</h4>
+                    <p class="standard-description">Food and Drug Administration approval for pharmaceutical and food packaging.</p>
+                </div>
+                
+                <div class="standard-card scroll-reveal">
+                    <i class="fas fa-globe standard-icon"></i>
+                    <h4 class="standard-title">CE Marking</h4>
+                    <p class="standard-description">European Conformity marking for products exported to European markets.</p>
+                </div>
+                
+                <div class="standard-card scroll-reveal">
+                    <i class="fas fa-leaf standard-icon"></i>
+                    <h4 class="standard-title">Eco-Friendly</h4>
+                    <p class="standard-description">Environmentally responsible manufacturing with recyclable materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="container">
+            <div class="cta-content text-center scroll-reveal">
+                <h2 class="cta-title">Need Custom Solutions?</h2>
+                <p class="cta-subtitle">Contact us for tailored packaging solutions that meet your specific requirements</p>
+                <div class="hero-cta">
+                    <a href="contact.html" class="btn btn-cta btn-hero">
+                        <i class="fas fa-envelope"></i> Get Quote
+                    </a>
+                    <a href="global-presence.html" class="btn btn-outline btn-hero" style="color: var(--primary-bg); border-color: var(--primary-bg);">
+                        <i class="fas fa-globe"></i> Export Markets
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 class="modal-title" id="modal-title">Product Details</h3>
+            <p class="modal-description" id="modal-description">Detailed product information will be displayed here.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-industry"></i> UCMPL</h3>
+                    <p>Ultra Craft Molders Pvt. Ltd. - Your trusted partner for premium plastic packaging solutions worldwide.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="#" style="margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="margin-right: 1rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="margin-right: 1rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="products.html">Products</a>
+                    <a href="global-presence.html">Global Presence</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <a href="products.html">Plastic Caps</a>
+                    <a href="products.html">Bottles & Containers</a>
+                    <a href="products.html">Automotive Parts</a>
+                    <a href="products.html">Pharmaceutical Packaging</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Haridwar, Uttarakhand, India</p>
+                    <p><i class="fas fa-phone"></i> +91-XXXX-XXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@ucmpl.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 UCMPL - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    
+    <!-- Products Page JavaScript -->
+    <script>
+        // Product category filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter products
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            card.classList.add('scroll-reveal');
+                        } else {
+                            card.style.display = 'none';
+                            card.classList.remove('scroll-reveal');
+                        }
+                    });
+                });
+            });
+        });
+        
+        // Product modal functions
+        function openModal(productType) {
+            const modal = document.getElementById('product-modal');
+            const title = document.getElementById('modal-title');
+            const description = document.getElementById('modal-description');
+            
+            const productData = {
+                caps: {
+                    title: 'Plastic Caps & Closures',
+                    description: 'Our plastic caps and closures are manufactured using high-quality HDPE and PP materials. They feature child-resistant mechanisms, tamper-evident seals, and are available in custom colors and sizes. Perfect for FMCG, food & beverage, and pharmaceutical industries. All products meet FDA standards and are designed for optimal performance and durability.'
+                },
+                bottles: {
+                    title: 'HDPE & PP Bottles',
+                    description: 'High-density polyethylene and polypropylene bottles designed for various industrial and consumer applications. Features include excellent chemical resistance, UV protection, custom shapes and sizes, and food-grade materials. These bottles are ideal for packaging liquids, chemicals, and consumer products with superior durability and performance.'
+                },
+                automotive: {
+                    title: 'Automotive Components',
+                    description: 'Precision-molded automotive parts and components manufactured to meet international quality standards. Our automotive components feature high precision molding, heat-resistant materials, custom tooling capabilities, and ISO certified production processes. Perfect for the automotive industry with reliable performance and durability.'
+                },
+                containers: {
+                    title: 'Packaging Containers',
+                    description: 'Custom plastic containers and jars designed for pharmaceutical, cosmetic, and food packaging needs. Features include custom design solutions, multiple material options, batch consistency, and quick turnaround times. These containers offer superior quality and are perfect for various packaging applications.'
+                },
+                pallets: {
+                    title: 'Plastic Pallets',
+                    description: 'Durable and lightweight plastic pallets designed for efficient material handling and logistics operations. Features include heavy-duty construction, hygienic and washable design, nestable structure, and export quality standards. Perfect for warehouse and logistics operations with excellent durability.'
+                },
+                pharmaceutical: {
+                    title: 'Pharmaceutical Packaging',
+                    description: 'FDA-approved pharmaceutical containers and packaging solutions for the global healthcare industry. Features include FDA approved materials, tamper-evident features, child-resistant options, and batch traceability. These products meet the highest standards for pharmaceutical packaging and are trusted by healthcare companies worldwide.'
+                }
+            };
+            
+            const data = productData[productType] || productData.caps;
+            title.textContent = data.title;
+            description.textContent = data.description;
+            
+            modal.classList.add('active');
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('product-modal');
+            modal.classList.remove('active');
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('product-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

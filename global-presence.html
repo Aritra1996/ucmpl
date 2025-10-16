@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Presence - UCMPL | Export Markets Worldwide</title>
+    <meta name="description" content="Discover UCMPL's global export presence across 20+ countries. Explore our international markets, export statistics, and worldwide distribution network.">
+    <meta name="keywords" content="global presence, export markets, international trade, worldwide distribution, UCMPL exports">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Global Presence - UCMPL | Export Markets Worldwide">
+    <meta property="og:description" content="Discover UCMPL's global export presence across 20+ countries worldwide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ucmpl.com/global-presence">
+    <meta property="og:image" content="assets/images/og-global.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Custom CSS for Global Presence Page -->
+    <style>
+        /* Global Presence Page Specific Styles */
+        .page-header {
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #2a345b 100%);
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 255, 136, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            animation: float 25s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+        
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* World Map Section */
+        .world-map-section {
+            background: var(--primary-bg);
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .map-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .world-map {
+            width: 100%;
+            height: 400px;
+            background: var(--gradient-dark);
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: var(--brand-primary);
+            opacity: 0.3;
+        }
+        
+        .map-pins {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .map-pin {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--brand-primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .map-pin:hover {
+            transform: scale(1.5);
+            background: var(--brand-secondary);
+        }
+        
+        .map-pin::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple 2s infinite;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        /* Pin positions (approximate) */
+        .pin-usa { top: 25%; left: 15%; }
+        .pin-uk { top: 20%; left: 45%; }
+        .pin-germany { top: 25%; left: 50%; }
+        .pin-france { top: 30%; left: 47%; }
+        .pin-canada { top: 15%; left: 12%; }
+        .pin-australia { top: 70%; left: 75%; }
+        .pin-japan { top: 30%; left: 80%; }
+        .pin-korea { top: 25%; left: 78%; }
+        .pin-saudi { top: 40%; left: 55%; }
+        .pin-south-africa { top: 65%; left: 52%; }
+        .pin-brazil { top: 60%; left: 25%; }
+        .pin-mexico { top: 35%; left: 8%; }
+        
+        /* Export Statistics */
+        .export-stats {
+            background: var(--secondary-bg);
+            padding: 5rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--primary-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--brand-primary);
+        }
+        
+        .stat-icon {
+            font-size: 3rem;
+            color: var(--brand-primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+        
+        /* Regional Markets */
+        .regional-markets {
+            background: var(--primary-bg);
+            padding: 5rem 0;
+        }
+        
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .region-card {
+            background: var(--secondary-bg);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .region-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .region-card:hover::before {
+            left: 100%;
+        }
+        
+        .region-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--brand-primary);
+        }
+        
+        .region-flag {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .region-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .region-countries {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .region-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .region-stat {
+            text-align: center;
+        }
+        
+        .region-stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+            display: block;
+        }
+        
+        .region-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        /* Export Process */
+        .export-process {
+            background: var(--gradient-dark);
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .export-process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%2300d4ff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-step {
+            background: rgba(26, 31, 46, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+        }
+        
+        .process-step:hover {
+            background: rgba(0, 212, 255, 0.05);
+            border-color: var(--brand-primary);
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: var(--primary-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .step-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: var(--secondary-bg);
+            padding: 5rem 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: var(--primary-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--brand-primary);
+        }
+        
+        .testimonial-quote {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-bg);
+            font-weight: 700;
+        }
+        
+        .author-info h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .world-map {
+                height: 300px;
+                font-size: 6rem;
+            }
+            
+            .map-pin {
+                width: 15px;
+                height: 15px;
+            }
+            
+            .region-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .world-map {
+                height: 250px;
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-industry"></i> UCMPL
+                </a>
+                
+                <nav class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="global-presence.html" class="active">Global Presence</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title scroll-reveal">Global Presence</h1>
+            <p class="page-subtitle scroll-reveal">Serving customers across continents with reliable export solutions</p>
+        </div>
+    </section>
+
+    <!-- World Map Section -->
+    <section class="world-map-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Our Global Reach</h2>
+                <p class="section-subtitle">Interactive map showing our export destinations worldwide</p>
+            </div>
+            
+            <div class="map-container scroll-reveal">
+                <div class="world-map">
+                    <i class="fas fa-globe"></i>
+                    <div class="map-pins">
+                        <div class="map-pin pin-usa" title="United States"></div>
+                        <div class="map-pin pin-uk" title="United Kingdom"></div>
+                        <div class="map-pin pin-germany" title="Germany"></div>
+                        <div class="map-pin pin-france" title="France"></div>
+                        <div class="map-pin pin-canada" title="Canada"></div>
+                        <div class="map-pin pin-australia" title="Australia"></div>
+                        <div class="map-pin pin-japan" title="Japan"></div>
+                        <div class="map-pin pin-korea" title="South Korea"></div>
+                        <div class="map-pin pin-saudi" title="Saudi Arabia"></div>
+                        <div class="map-pin pin-south-africa" title="South Africa"></div>
+                        <div class="map-pin pin-brazil" title="Brazil"></div>
+                        <div class="map-pin pin-mexico" title="Mexico"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Export Statistics -->
+    <section class="export-stats">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Export Statistics</h2>
+                <p class="section-subtitle">Numbers that reflect our global success and growth</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card scroll-reveal">
+                    <i class="fas fa-globe stat-icon"></i>
+                    <span class="stat-number" data-target="20">0</span>
+                    <span class="stat-label">Countries Served</span>
+                </div>
+                
+                <div class="stat-card scroll-reveal">
+                    <i class="fas fa-users stat-icon"></i>
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">International Clients</span>
+                </div>
+                
+                <div class="stat-card scroll-reveal">
+                    <i class="fas fa-shipping-fast stat-icon"></i>
+                    <span class="stat-number" data-target="1000">0</span>
+                    <span class="stat-label">Export Shipments</span>
+                </div>
+                
+                <div class="stat-card scroll-reveal">
+                    <i class="fas fa-industry stat-icon"></i>
+                    <span class="stat-number" data-target="25">0</span>
+                    <span class="stat-label">Product Categories</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Markets -->
+    <section class="regional-markets">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Regional Markets</h2>
+                <p class="section-subtitle">Our presence across different continents and regions</p>
+            </div>
+            
+            <div class="regions-grid">
+                <div class="region-card scroll-reveal">
+                    <div class="region-flag">🌍</div>
+                    <h3 class="region-name">North America</h3>
+                    <p class="region-countries">United States, Canada, Mexico</p>
+                    <div class="region-stats">
+                        <div class="region-stat">
+                            <span class="region-stat-number">150</span>
+                            <span class="region-stat-label">Clients</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">40%</span>
+                            <span class="region-stat-label">Revenue</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="region-card scroll-reveal">
+                    <div class="region-flag">🌍</div>
+                    <h3 class="region-name">Europe</h3>
+                    <p class="region-countries">United Kingdom, Germany, France, Spain, Italy</p>
+                    <div class="region-stats">
+                        <div class="region-stat">
+                            <span class="region-stat-number">200</span>
+                            <span class="region-stat-label">Clients</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">35%</span>
+                            <span class="region-stat-label">Revenue</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="region-card scroll-reveal">
+                    <div class="region-flag">🌍</div>
+                    <h3 class="region-name">Asia Pacific</h3>
+                    <p class="region-countries">Japan, South Korea, Australia, Singapore</p>
+                    <div class="region-stats">
+                        <div class="region-stat">
+                            <span class="region-stat-number">100</span>
+                            <span class="region-stat-label">Clients</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">20%</span>
+                            <span class="region-stat-label">Revenue</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="region-card scroll-reveal">
+                    <div class="region-flag">🌍</div>
+                    <h3 class="region-name">Middle East & Africa</h3>
+                    <p class="region-countries">Saudi Arabia, UAE, South Africa, Egypt</p>
+                    <div class="region-stats">
+                        <div class="region-stat">
+                            <span class="region-stat-number">50</span>
+                            <span class="region-stat-label">Clients</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">5%</span>
+                            <span class="region-stat-label">Revenue</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Export Process -->
+    <section class="export-process">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Our Export Process</h2>
+                <p class="section-subtitle">Streamlined process ensuring smooth international deliveries</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step scroll-reveal">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Order Processing</h3>
+                    <p class="step-description">Receive and process export orders with detailed specifications and requirements from international clients.</p>
+                </div>
+                
+                <div class="process-step scroll-reveal">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Production Planning</h3>
+                    <p class="step-description">Plan production schedules and allocate resources to meet export deadlines and quality standards.</p>
+                </div>
+                
+                <div class="process-step scroll-reveal">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Quality Control</h3>
+                    <p class="step-description">Conduct rigorous quality checks and testing to ensure products meet international standards and client specifications.</p>
+                </div>
+                
+                <div class="process-step scroll-reveal">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Packaging & Documentation</h3>
+                    <p class="step-description">Prepare export packaging and complete all necessary documentation including certificates and compliance papers.</p>
+                </div>
+                
+                <div class="process-step scroll-reveal">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Shipping & Logistics</h3>
+                    <p class="step-description">Coordinate with shipping partners to ensure timely and secure delivery to international destinations.</p>
+                </div>
+                
+                <div class="process-step scroll-reveal">
+                    <div class="step-number">6</div>
+                    <h3 class="step-title">Delivery & Support</h3>
+                    <p class="step-description">Track shipments and provide ongoing support to ensure successful delivery and customer satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Client Testimonials</h2>
+                <p class="section-subtitle">What our international clients say about us</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card scroll-reveal">
+                    <p class="testimonial-quote">"UCMPL has been our trusted partner for plastic packaging solutions for over 3 years. Their quality and reliability are unmatched in the industry."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JS</div>
+                        <div class="author-info">
+                            <h4>John Smith</h4>
+                            <p>Procurement Manager, Global Corp USA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card scroll-reveal">
+                    <p class="testimonial-quote">"The team at UCMPL understands our requirements perfectly and delivers consistently high-quality products on time. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MS</div>
+                        <div class="author-info">
+                            <h4>Maria Schmidt</h4>
+                            <p>Operations Director, Tech Solutions GmbH</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card scroll-reveal">
+                    <p class="testimonial-quote">"Excellent service and product quality. UCMPL's export process is smooth and their customer support is outstanding."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TY</div>
+                        <div class="author-info">
+                            <h4>Takashi Yamamoto</h4>
+                            <p>Quality Manager, Precision Industries Japan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="container">
+            <div class="cta-content text-center scroll-reveal">
+                <h2 class="cta-title">Ready to Export with UCMPL?</h2>
+                <p class="cta-subtitle">Join our global network of satisfied customers and experience export excellence</p>
+                <div class="hero-cta">
+                    <a href="contact.html" class="btn btn-cta btn-hero">
+                        <i class="fas fa-envelope"></i> Start Export Journey
+                    </a>
+                    <a href="products.html" class="btn btn-outline btn-hero" style="color: var(--primary-bg); border-color: var(--primary-bg);">
+                        <i class="fas fa-box"></i> View Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-industry"></i> UCMPL</h3>
+                    <p>Ultra Craft Molders Pvt. Ltd. - Your trusted partner for premium plastic packaging solutions worldwide.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="#" style="margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="margin-right: 1rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="margin-right: 1rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="products.html">Products</a>
+                    <a href="global-presence.html">Global Presence</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Export Markets</h3>
+                    <a href="#">North America</a>
+                    <a href="#">Europe</a>
+                    <a href="#">Asia Pacific</a>
+                    <a href="#">Middle East & Africa</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Haridwar, Uttarakhand, India</p>
+                    <p><i class="fas fa-phone"></i> +91-XXXX-XXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@ucmpl.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 UCMPL - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>

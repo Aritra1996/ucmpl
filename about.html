@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About UCMPL - Ultra Craft Molders Pvt. Ltd. | Manufacturing Excellence</title>
+    <meta name="description" content="Learn about UCMPL's journey, manufacturing capabilities, and commitment to quality in plastic packaging solutions for global markets.">
+    <meta name="keywords" content="about UCMPL, manufacturing, quality, company history, plastic packaging, export excellence">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About UCMPL - Ultra Craft Molders Pvt. Ltd. | Manufacturing Excellence">
+    <meta property="og:description" content="Learn about UCMPL's journey and manufacturing capabilities in plastic packaging solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ucmpl.com/about">
+    <meta property="og:image" content="assets/images/og-about.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Custom CSS for About Page -->
+    <style>
+        /* About Page Specific Styles */
+        .page-header {
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #2a345b 100%);
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+        }
+        
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Company Overview */
+        .company-overview {
+            background: var(--primary-bg);
+            padding: 5rem 0;
+        }
+        
+        .overview-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .overview-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .overview-text p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .overview-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .overview-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .overview-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .overview-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 136, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .overview-image:hover::before {
+            opacity: 1;
+        }
+        
+        /* Mission & Vision */
+        .mission-vision {
+            background: var(--secondary-bg);
+            padding: 5rem 0;
+        }
+        
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+        
+        .mission-card, .vision-card {
+            background: var(--primary-bg);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card::before, .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--brand-primary);
+        }
+        
+        .mission-icon, .vision-icon {
+            font-size: 4rem;
+            color: var(--brand-primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-card h3, .vision-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .mission-card p, .vision-card p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        
+        /* Values */
+        .values {
+            background: var(--primary-bg);
+            padding: 5rem 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background: var(--secondary-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .value-card:hover::before {
+            left: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--brand-primary);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: var(--brand-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .value-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .value-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Manufacturing Capabilities */
+        .manufacturing {
+            background: var(--gradient-dark);
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .manufacturing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%2300d4ff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .capability-card {
+            background: rgba(26, 31, 46, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .capability-card:hover {
+            background: rgba(0, 212, 255, 0.05);
+            border-color: var(--brand-primary);
+            transform: translateY(-5px);
+        }
+        
+        .capability-icon {
+            font-size: 2.5rem;
+            color: var(--brand-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .capability-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .capability-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Leadership Team */
+        .leadership {
+            background: var(--secondary-bg);
+            padding: 5rem 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background: var(--primary-bg);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--brand-primary);
+        }
+        
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-bg);
+        }
+        
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .member-position {
+            color: var(--brand-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .member-bio {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .overview-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .mission-vision-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .overview-text h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .overview-text h2 {
+                font-size: 1.75rem;
+            }
+            
+            .mission-card, .vision-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-industry"></i> UCMPL
+                </a>
+                
+                <nav class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="global-presence.html">Global Presence</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title scroll-reveal">About UCMPL</h1>
+            <p class="page-subtitle scroll-reveal">Excellence in Manufacturing, Commitment to Quality</p>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="company-overview">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text scroll-reveal">
+                    <h2>Our Story</h2>
+                    <p>Ultra Craft Molders Pvt. Ltd. (UCMPL) was established in 2015 with a vision to become a leading manufacturer and exporter of premium plastic packaging solutions. Based in Haridwar, Uttarakhand, we have grown from a small manufacturing unit to a globally recognized company serving customers across 20+ countries.</p>
+                    
+                    <p>Our journey began with a simple yet powerful mission: to provide high-quality plastic packaging solutions that meet international standards while maintaining competitive pricing. Today, we are proud to be one of India's most trusted plastic packaging manufacturers, with a strong focus on innovation, quality, and customer satisfaction.</p>
+                    
+                    <p>With state-of-the-art manufacturing facilities, advanced machinery, and a team of skilled professionals, UCMPL has established itself as a reliable partner for businesses worldwide. Our commitment to excellence and continuous improvement has earned us the trust of over 500 international clients.</p>
+                </div>
+                
+                <div class="overview-image scroll-reveal">
+                    <img src="assets/images/manufacturing-facility.jpg" alt="UCMPL Manufacturing Facility" style="background: var(--gradient-dark);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mission-card scroll-reveal">
+                    <i class="fas fa-bullseye mission-icon"></i>
+                    <h3>Our Mission</h3>
+                    <p>To be the global leader in plastic packaging solutions by delivering innovative, high-quality products that exceed customer expectations. We are committed to sustainable manufacturing practices, environmental responsibility, and continuous innovation to meet the evolving needs of our international clients.</p>
+                </div>
+                
+                <div class="vision-card scroll-reveal">
+                    <i class="fas fa-eye vision-icon"></i>
+                    <h3>Our Vision</h3>
+                    <p>To become the world's most trusted and preferred manufacturer of plastic packaging solutions, recognized for our excellence in quality, innovation, and customer service. We envision a future where UCMPL products are the standard of choice for businesses across all continents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-subtitle">The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card scroll-reveal">
+                    <i class="fas fa-gem value-icon"></i>
+                    <h4>Quality Excellence</h4>
+                    <p>We maintain the highest standards of quality in every product we manufacture, ensuring international compliance and customer satisfaction.</p>
+                </div>
+                
+                <div class="value-card scroll-reveal">
+                    <i class="fas fa-handshake value-icon"></i>
+                    <h4>Customer Focus</h4>
+                    <p>Our customers are at the heart of everything we do. We build lasting relationships through exceptional service and reliable delivery.</p>
+                </div>
+                
+                <div class="value-card scroll-reveal">
+                    <i class="fas fa-lightbulb value-icon"></i>
+                    <h4>Innovation</h4>
+                    <p>We continuously invest in new technologies and processes to stay ahead of market trends and provide cutting-edge solutions.</p>
+                </div>
+                
+                <div class="value-card scroll-reveal">
+                    <i class="fas fa-leaf value-icon"></i>
+                    <h4>Sustainability</h4>
+                    <p>We are committed to environmentally responsible manufacturing practices and sustainable business operations.</p>
+                </div>
+                
+                <div class="value-card scroll-reveal">
+                    <i class="fas fa-users value-icon"></i>
+                    <h4>Teamwork</h4>
+                    <p>We believe in the power of collaboration and foster a culture of mutual respect, support, and shared success.</p>
+                </div>
+                
+                <div class="value-card scroll-reveal">
+                    <i class="fas fa-globe value-icon"></i>
+                    <h4>Global Perspective</h4>
+                    <p>We think globally while acting locally, understanding diverse market needs and cultural sensitivities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Capabilities -->
+    <section class="manufacturing">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Manufacturing Excellence</h2>
+                <p class="section-subtitle">State-of-the-art facilities and advanced manufacturing capabilities</p>
+            </div>
+            
+            <div class="capabilities-grid">
+                <div class="capability-card scroll-reveal">
+                    <i class="fas fa-cogs capability-icon"></i>
+                    <h4>Injection Molding</h4>
+                    <p>Advanced injection molding machines for precision manufacturing of plastic components</p>
+                </div>
+                
+                <div class="capability-card scroll-reveal">
+                    <i class="fas fa-wind capability-icon"></i>
+                    <h4>Blow Molding</h4>
+                    <p>State-of-the-art blow molding technology for bottles and containers</p>
+                </div>
+                
+                <div class="capability-card scroll-reveal">
+                    <i class="fas fa-tools capability-icon"></i>
+                    <h4>Tool Design</h4>
+                    <p>In-house tool design and manufacturing capabilities for custom solutions</p>
+                </div>
+                
+                <div class="capability-card scroll-reveal">
+                    <i class="fas fa-microscope capability-icon"></i>
+                    <h4>Quality Testing</h4>
+                    <p>Comprehensive quality testing and inspection facilities</p>
+                </div>
+                
+                <div class="capability-card scroll-reveal">
+                    <i class="fas fa-recycle capability-icon"></i>
+                    <h4>Recycling</h4>
+                    <p>Eco-friendly recycling and waste management systems</p>
+                </div>
+                
+                <div class="capability-card scroll-reveal">
+                    <i class="fas fa-shipping-fast capability-icon"></i>
+                    <h4>Packaging</h4>
+                    <p>Automated packaging and labeling systems for efficient shipping</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="leadership">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Leadership Team</h2>
+                <p class="section-subtitle">Meet the visionaries behind UCMPL's success</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4 class="member-name">Rajesh Kumar</h4>
+                    <p class="member-position">Founder & CEO</p>
+                    <p class="member-bio">With over 20 years of experience in the plastic manufacturing industry, Rajesh leads UCMPL with a vision for global excellence and innovation.</p>
+                </div>
+                
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4 class="member-name">Priya Sharma</h4>
+                    <p class="member-position">Director of Operations</p>
+                    <p class="member-bio">Priya oversees our manufacturing operations, ensuring quality and efficiency across all production processes.</p>
+                </div>
+                
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4 class="member-name">Amit Patel</h4>
+                    <p class="member-position">Head of Exports</p>
+                    <p class="member-bio">Amit manages our international business, building relationships with clients across the globe and ensuring smooth export operations.</p>
+                </div>
+                
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4 class="member-name">Sneha Gupta</h4>
+                    <p class="member-position">Quality Assurance Manager</p>
+                    <p class="member-bio">Sneha ensures that every product meets our high-quality standards and international certifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="container">
+            <div class="cta-content text-center scroll-reveal">
+                <h2 class="cta-title">Ready to Work with UCMPL?</h2>
+                <p class="cta-subtitle">Discover how our manufacturing excellence can meet your packaging needs</p>
+                <div class="hero-cta">
+                    <a href="contact.html" class="btn btn-cta btn-hero">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                    <a href="products.html" class="btn btn-outline btn-hero" style="color: var(--primary-bg); border-color: var(--primary-bg);">
+                        <i class="fas fa-box"></i> View Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-industry"></i> UCMPL</h3>
+                    <p>Ultra Craft Molders Pvt. Ltd. - Your trusted partner for premium plastic packaging solutions worldwide.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="#" style="margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="margin-right: 1rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="margin-right: 1rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="products.html">Products</a>
+                    <a href="global-presence.html">Global Presence</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <a href="products.html">Plastic Caps</a>
+                    <a href="products.html">Bottles & Containers</a>
+                    <a href="products.html">Automotive Parts</a>
+                    <a href="products.html">Pharmaceutical Packaging</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Haridwar, Uttarakhand, India</p>
+                    <p><i class="fas fa-phone"></i> +91-XXXX-XXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@ucmpl.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 UCMPL - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>
