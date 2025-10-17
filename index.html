@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plastic Global - Ultra Craft Molders Pvt. Ltd. | Top Manufacturers of Packaging Solutions</title>
+    <title>Plastik Global - Ultra Craft Molders Pvt. Ltd. | Top Manufacturers of Packaging Solutions</title>
     <meta name="description" content="One of the top manufacturers of packaging solutions for FMCG, Food & Beverages, Healthcare, Consumer Goods & Automotive. Premium quality plastic bottles, caps, and packaging solutions.">
-    <meta name="keywords" content="plastic packaging, export, manufacturing, bottle caps, closures, automotive components, global trade, Plastic Global">
+    <meta name="keywords" content="plastic packaging, export, manufacturing, bottle caps, closures, automotive components, global trade, Plastik Global">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Plastic Global - Ultra Craft Molders Pvt. Ltd. | Global Export Excellence">
+    <meta property="og:title" content="Plastik Global - Ultra Craft Molders Pvt. Ltd. | Global Export Excellence">
     <meta property="og:description" content="Leading manufacturer and exporter of plastic packaging solutions worldwide.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://plasticglobal.com">
+    <meta property="og:url" content="https://plastikglobal.com">
     <meta property="og:image" content="assets/images/og-image.jpg">
     
     <!-- Favicon -->
@@ -54,6 +54,15 @@
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        @keyframes floatSubtle {
+            0%, 100% { 
+                transform: translateY(0px) scale(1); 
+            }
+            50% { 
+                transform: translateY(-10px) scale(1.02); 
+            }
         }
         
         .hero-content {
@@ -166,9 +175,6 @@
         .stats-section {
             background: var(--gradient-dark);
             position: relative;
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100vw;
         }
         
         .stats-section::before {
@@ -188,9 +194,6 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
         }
         
         .stat-item {
@@ -200,7 +203,7 @@
             position: relative;
             z-index: 1;
             flex: 1;
-            min-width: 200px;
+            min-width: 120px;
             max-width: 250px;
             text-align: center;
             padding: 1.5rem;
@@ -215,18 +218,12 @@
         /* Products Preview */
         .products-preview {
             background: var(--primary-bg);
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100vw;
         }
         
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
         }
         
         .product-card {
@@ -263,9 +260,7 @@
         .global-presence {
             background: var(--gradient-accent);
             position: relative;
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100vw;
+            overflow: hidden;
         }
         
         .countries-grid {
@@ -274,7 +269,6 @@
             gap: 1rem;
             width: 100%;
             max-width: 100%;
-            overflow-x: hidden;
         }
         
         .global-presence::before {
@@ -285,7 +279,8 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="100" fill="%2300d4ff" opacity="0.1"/><circle cx="800" cy="300" r="150" fill="%2300ff88" opacity="0.1"/><circle cx="400" cy="700" r="120" fill="%23ff6b35" opacity="0.1"/></svg>');
-            animation: float 25s ease-in-out infinite;
+            animation: floatSubtle 25s ease-in-out infinite;
+            overflow: hidden;
         }
         
         .country-card {
@@ -306,7 +301,6 @@
             background: var(--gradient-primary);
             color: var(--primary-bg);
             position: relative;
-            overflow: hidden;
         }
         
         .cta-section::before {
@@ -367,16 +361,34 @@
         }
         
         /* Prevent horizontal scrolling */
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
-            overflow-x: hidden !important;
-            width: 100% !important;
-            max-width: 100vw !important;
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
         
         html {
-            overflow-x: hidden !important;
-            width: 100% !important;
-            max-width: 100vw !important;
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Ensure all content stays within viewport */
+        .hero,
+        .features,
+        .stats-section,
+        .products-preview,
+        .global-presence,
+        .cta-section {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
         
         /* Ensure header stays visible */
@@ -396,17 +408,17 @@
             overflow: visible !important;
         }
         
+        /* Container and section overflow handled by main.css */
         .container {
-            overflow-x: hidden !important;
-            width: 100% !important;
-            max-width: 100vw !important;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
         
-        /* Ensure all sections prevent horizontal overflow */
         .section {
-            overflow-x: hidden !important;
-            width: 100% !important;
-            max-width: 100vw !important;
+            width: 100%;
         }
         
         .header.scrolled {
@@ -436,8 +448,7 @@
             top: 80px !important;
             left: 0 !important;
             right: 0 !important;
-            width: 100vw !important;
-            max-width: 100vw !important;
+            width: 100% !important;
             background: #1a1f2e !important;
             flex-direction: column !important;
             padding: 15px 20px !important;
@@ -546,6 +557,7 @@
             .stat-item {
                 width: 100%;
                 max-width: 300px;
+                min-width: auto;
             }
             
             .products-grid {
@@ -579,7 +591,7 @@
     <div class="preloader" id="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary-bg); z-index: 10000; display: flex; align-items: center; justify-content: center;">
         <div style="text-align: center;">
             <div class="loading"></div>
-            <p style="margin-top: 1rem; color: var(--brand-primary);">Loading Plastic Global...</p>
+            <p style="margin-top: 1rem; color: var(--brand-primary);">Loading Plastik Global...</p>
         </div>
     </div>
 
@@ -588,7 +600,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <i class="fas fa-industry"></i> Plastic Global
+                    <i class="fas fa-industry"></i> Plastik Global
                 </a>
                 
                 <nav class="nav">
@@ -628,7 +640,7 @@
     <section class="features section">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <h2 class="section-title">Why Choose Plastic Global?</h2>
+                <h2 class="section-title">Why Choose Plastik Global?</h2>
                 <p class="section-subtitle">Excellence in manufacturing, commitment to quality, and global reach that sets us apart</p>
             </div>
             
@@ -822,7 +834,7 @@
     <section class="cta-section section">
         <div class="container">
             <div class="cta-content text-center scroll-reveal">
-                <h2 class="cta-title">Ready to Partner with Plastic Global?</h2>
+                <h2 class="cta-title">Ready to Partner with Plastik Global?</h2>
                 <p class="cta-subtitle">Join our global network of satisfied customers. Contact us today to discuss your export requirements.</p>
                 <div class="hero-cta">
                     <a href="contact.html" class="btn btn-cta btn-hero">
@@ -841,7 +853,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-industry"></i> Plastic Global</h3>
+                    <h3><i class="fas fa-industry"></i> Plastik Global</h3>
                     <p>Ultra Craft Molders Pvt. Ltd. - Your trusted partner for premium plastic packaging solutions worldwide.</p>
                     <div style="margin-top: 1rem;">
                         <a href="#" style="margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
@@ -876,7 +888,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Plastic Global - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
+                <p>&copy; 2025 Plastik Global - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
             </div>
         </div>
     </footer>
