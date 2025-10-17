@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About UCMPL - Ultra Craft Molders Pvt. Ltd. | Top Manufacturers of Packaging Solutions</title>
-    <meta name="description" content="Learn about UCMPL's journey as one of the top manufacturers of packaging solutions for FMCG, Food & Beverages, Healthcare, Consumer Goods & Automotive.">
-    <meta name="keywords" content="about UCMPL, manufacturing, quality, company history, plastic packaging, export excellence">
+    <title>About Plastic Global - Ultra Craft Molders Pvt. Ltd. | Top Manufacturers of Packaging Solutions</title>
+    <meta name="description" content="Learn about Plastic Global's journey as one of the top manufacturers of packaging solutions for FMCG, Food & Beverages, Healthcare, Consumer Goods & Automotive.">
+    <meta name="keywords" content="about Plastic Global, manufacturing, quality, company history, plastic packaging, export excellence">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="About UCMPL - Ultra Craft Molders Pvt. Ltd. | Manufacturing Excellence">
-    <meta property="og:description" content="Learn about UCMPL's journey and manufacturing capabilities in plastic packaging solutions.">
+    <meta property="og:title" content="About Plastic Global - Ultra Craft Molders Pvt. Ltd. | Manufacturing Excellence">
+    <meta property="og:description" content="Learn about Plastic Global's journey and manufacturing capabilities in plastic packaging solutions.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ucmpl.com/about">
+    <meta property="og:url" content="https://plasticglobal.com/about">
     <meta property="og:image" content="assets/images/og-about.jpg">
     
     <!-- Favicon -->
@@ -366,6 +366,123 @@
             line-height: 1.5;
         }
         
+        /* CTA Section Buttons */
+        .cta-section .btn-hero {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            min-width: 180px;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-section .btn-cta {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            color: var(--primary-bg) !important;
+            border: 2px solid #00ff88 !important;
+            box-shadow: 
+                0 4px 15px rgba(0, 255, 136, 0.3) !important,
+                0 0 20px rgba(0, 255, 136, 0.2) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        
+        .cta-section .btn-cta::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+            transition: left 0.5s !important;
+        }
+        
+        .cta-section .btn-cta:hover::before {
+            left: 100% !important;
+        }
+        
+        .cta-section .btn-cta:hover {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            box-shadow: 
+                0 6px 20px rgba(0, 255, 136, 0.4) !important,
+                0 0 30px rgba(0, 255, 136, 0.3) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        .cta-section .btn-outline {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            color: var(--primary-bg) !important;
+            border: 2px solid #00ff88 !important;
+            box-shadow: 
+                0 4px 15px rgba(0, 255, 136, 0.3) !important,
+                0 0 20px rgba(0, 255, 136, 0.2) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        
+        .cta-section .btn-outline::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+            transition: left 0.5s !important;
+        }
+        
+        .cta-section .btn-outline:hover::before {
+            left: 100% !important;
+        }
+        
+        .cta-section .btn-outline:hover {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            box-shadow: 
+                0 6px 20px rgba(0, 255, 136, 0.4) !important,
+                0 0 30px rgba(0, 255, 136, 0.3) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        .cta-section .btn-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-section .btn-hero:hover::before {
+            left: 100%;
+        }
+        
+        .cta-section .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-section .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .page-title {
@@ -407,7 +524,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">
-                    <i class="fas fa-industry"></i> UCMPL
+                    <i class="fas fa-industry"></i> Plastic Global
                 </a>
                 
                 <nav class="nav">
@@ -428,7 +545,7 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1 class="page-title scroll-reveal">About UCMPL</h1>
+            <h1 class="page-title scroll-reveal">About Plastic Global</h1>
             <p class="page-subtitle scroll-reveal">Excellence in Manufacturing, Commitment to Quality</p>
         </div>
     </section>
@@ -439,15 +556,15 @@
             <div class="overview-content">
                 <div class="overview-text scroll-reveal">
                     <h2>Our Story</h2>
-                    <p>Ultra Craft Molders Pvt. Ltd. (UCMPL) is one of the top manufacturers of packaging solutions for FMCG, Food & Beverages, Healthcare, Consumer Goods & Automotive. Based in Prem Rice Mill Compound, Bahadrabad, Haridwar, we have established ourselves as a trusted name in the plastic packaging industry.</p>
+                    <p>Ultra Craft Molders Pvt. Ltd. (Plastic Global) is one of the top manufacturers of packaging solutions for FMCG, Food & Beverages, Healthcare, Consumer Goods & Automotive. Based in Prem Rice Mill Compound, Bahadrabad, Haridwar, we have established ourselves as a trusted name in the plastic packaging industry.</p>
                     
                     <p>Our journey began with a vision to provide high-quality plastic packaging solutions that meet the diverse needs of various industries. Today, we are proud to serve clients across multiple sectors with our comprehensive range of products including plastic bottles, bottle caps, road barricades, HDPE solar floats, pallets, sleeves, boxes, and specialized packaging for pharmaceuticals, cosmetics, and edible oils.</p>
                     
-                    <p>With state-of-the-art manufacturing facilities, advanced machinery, and a team of skilled professionals led by Managing Director Ajeet Kumar Jain, UCMPL has established itself as a reliable partner for businesses worldwide. Our commitment to excellence and continuous improvement has earned us the trust of prestigious clients including AG Industries, Heinz, VIP Industries, and many more.</p>
+                    <p>With state-of-the-art manufacturing facilities, advanced machinery, and a team of skilled professionals led by Managing Director Ajeet Kumar Jain, Plastic Global has established itself as a reliable partner for businesses worldwide. Our commitment to excellence and continuous improvement has earned us the trust of prestigious clients including AG Industries, Heinz, VIP Industries, and many more.</p>
                 </div>
                 
                 <div class="overview-image scroll-reveal">
-                    <img src="assets/images/manufacturing-facility.jpg" alt="UCMPL Manufacturing Facility" style="background: var(--gradient-dark);">
+                    <img src="images/banner1.jpg" alt="Plastic Global Manufacturing Facility" style="background: var(--gradient-dark);">
                 </div>
             </div>
         </div>
@@ -466,7 +583,7 @@
                 <div class="vision-card scroll-reveal">
                     <i class="fas fa-eye vision-icon"></i>
                     <h3>Our Vision</h3>
-                    <p>To become the world's most trusted and preferred manufacturer of plastic packaging solutions, recognized for our excellence in quality, innovation, and customer service. We envision a future where UCMPL products are the standard of choice for businesses across all continents.</p>
+                    <p>To become the world's most trusted and preferred manufacturer of plastic packaging solutions, recognized for our excellence in quality, innovation, and customer service. We envision a future where Plastic Global products are the standard of choice for businesses across all continents.</p>
                 </div>
             </div>
         </div>
@@ -573,7 +690,7 @@
         <div class="container">
             <div class="section-header scroll-reveal">
                 <h2 class="section-title">Leadership Team</h2>
-                <p class="section-subtitle">Meet the visionaries behind UCMPL's success</p>
+                <p class="section-subtitle">Meet the visionaries behind Plastic Global's success</p>
             </div>
             
             <div class="team-grid">
@@ -583,7 +700,7 @@
                     </div>
                     <h4 class="member-name">Ajeet Kumar Jain</h4>
                     <p class="member-position">Managing Director</p>
-                    <p class="member-bio">Leading UCMPL with extensive experience in plastic manufacturing, Ajeet Kumar Jain drives the company's vision for excellence and innovation in packaging solutions.</p>
+                    <p class="member-bio">Leading Plastic Global with extensive experience in plastic manufacturing, Ajeet Kumar Jain drives the company's vision for excellence and innovation in packaging solutions.</p>
                 </div>
                 
                 <div class="team-member scroll-reveal">
@@ -620,7 +737,7 @@
     <section class="cta-section section">
         <div class="container">
             <div class="cta-content text-center scroll-reveal">
-                <h2 class="cta-title">Ready to Work with UCMPL?</h2>
+                <h2 class="cta-title">Ready to Work with Plastic Global?</h2>
                 <p class="cta-subtitle">Discover how our manufacturing excellence can meet your packaging needs</p>
                 <div class="hero-cta">
                     <a href="contact.html" class="btn btn-cta btn-hero">
@@ -639,7 +756,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-industry"></i> UCMPL</h3>
+                    <h3><i class="fas fa-industry"></i> Plastic Global</h3>
                     <p>Ultra Craft Molders Pvt. Ltd. - Your trusted partner for premium plastic packaging solutions worldwide.</p>
                     <div style="margin-top: 1rem;">
                         <a href="#" style="margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
@@ -675,7 +792,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 UCMPL - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
+                <p>&copy; 2025 Plastic Global - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
             </div>
         </div>
     </footer>

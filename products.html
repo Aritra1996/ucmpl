@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - UCMPL | Top Manufacturers of Packaging Solutions</title>
-    <meta name="description" content="Explore UCMPL's comprehensive range of packaging solutions including plastic bottles, bottle caps, road barricades, HDPE solar floats, pallets, and specialized packaging for FMCG, Food & Beverages, Healthcare, Consumer Goods & Automotive.">
+    <title>Products - Plastic Global | Top Manufacturers of Packaging Solutions</title>
+    <meta name="description" content="Explore Plastic Global's comprehensive range of packaging solutions including plastic bottles, bottle caps, road barricades, HDPE solar floats, pallets, and specialized packaging for FMCG, Food & Beverages, Healthcare, Consumer Goods & Automotive.">
     <meta name="keywords" content="plastic products, packaging solutions, bottle caps, closures, automotive components, pharmaceutical packaging, export products">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Products - UCMPL | Plastic Packaging Solutions for Global Export">
-    <meta property="og:description" content="Explore UCMPL's comprehensive range of plastic packaging products for global export.">
+    <meta property="og:title" content="Products - Plastic Global | Plastic Packaging Solutions for Global Export">
+    <meta property="og:description" content="Explore Plastic Global's comprehensive range of plastic packaging products for global export.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ucmpl.com/products">
+    <meta property="og:url" content="https://plasticglobal.com/products">
     <meta property="og:image" content="assets/images/og-products.jpg">
     
     <!-- Favicon -->
@@ -368,6 +368,123 @@
             font-size: 0.9rem;
         }
         
+        /* CTA Section Buttons */
+        .cta-section .btn-cta {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            color: var(--primary-bg) !important;
+            border: 2px solid #00ff88 !important;
+            box-shadow: 
+                0 4px 15px rgba(0, 255, 136, 0.3) !important,
+                0 0 20px rgba(0, 255, 136, 0.2) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        
+        .cta-section .btn-cta::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+            transition: left 0.5s !important;
+        }
+        
+        .cta-section .btn-cta:hover::before {
+            left: 100% !important;
+        }
+        
+        .cta-section .btn-cta:hover {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            box-shadow: 
+                0 6px 20px rgba(0, 255, 136, 0.4) !important,
+                0 0 30px rgba(0, 255, 136, 0.3) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        .cta-section .btn-outline {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            color: var(--primary-bg) !important;
+            border: 2px solid #00ff88 !important;
+            box-shadow: 
+                0 4px 15px rgba(0, 255, 136, 0.3) !important,
+                0 0 20px rgba(0, 255, 136, 0.2) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        
+        .cta-section .btn-outline::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+            transition: left 0.5s !important;
+        }
+        
+        .cta-section .btn-outline:hover::before {
+            left: 100% !important;
+        }
+        
+        .cta-section .btn-outline:hover {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            box-shadow: 
+                0 6px 20px rgba(0, 255, 136, 0.4) !important,
+                0 0 30px rgba(0, 255, 136, 0.3) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        .cta-section .btn-hero {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            min-width: 180px;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-section .btn-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-section .btn-hero:hover::before {
+            left: 100%;
+        }
+        
+        .cta-section .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-section .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .page-title {
@@ -405,7 +522,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">
-                    <i class="fas fa-industry"></i> UCMPL
+                    <i class="fas fa-industry"></i> Plastic Global
                 </a>
                 
                 <nav class="nav">
@@ -453,7 +570,7 @@
                 <!-- Plastic Bottles -->
                 <div class="product-card scroll-reveal" data-category="bottles">
                     <div class="product-image">
-                        <i class="fas fa-flask"></i>
+                        <img src="images/banner1.jpg" alt="Plastic Bottles" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Plastic Bottles</h3>
@@ -474,7 +591,7 @@
                 <!-- Bottle Caps -->
                 <div class="product-card scroll-reveal" data-category="caps">
                     <div class="product-image">
-                        <i class="fas fa-cube"></i>
+                        <img src="images/compack-400x400.jpg" alt="Bottle Caps" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Bottle Caps</h3>
@@ -495,7 +612,7 @@
                 <!-- Road Barricades -->
                 <div class="product-card scroll-reveal" data-category="barricades">
                     <div class="product-image">
-                        <i class="fas fa-road"></i>
+                        <img src="images/latest_news_banner1.jpg" alt="Road Barricades" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Road Barricades</h3>
@@ -516,7 +633,7 @@
                 <!-- HDPE Solar Floats -->
                 <div class="product-card scroll-reveal" data-category="solar">
                     <div class="product-image">
-                        <i class="fas fa-sun"></i>
+                        <img src="images/homeb.jpg" alt="HDPE Solar Floats" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">HDPE Solar Floats</h3>
@@ -537,7 +654,7 @@
                 <!-- Pallets & Sleeves -->
                 <div class="product-card scroll-reveal" data-category="pallets">
                     <div class="product-image">
-                        <i class="fas fa-th"></i>
+                        <img src="images/page-title-background.jpg" alt="Pallets & Sleeves" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Pallets & Sleeves</h3>
@@ -558,7 +675,7 @@
                 <!-- Planters & Pots -->
                 <div class="product-card scroll-reveal" data-category="planters">
                     <div class="product-image">
-                        <i class="fas fa-seedling"></i>
+                        <img src="images/ucmpl-certificate-400x400.jpg" alt="Planters & Pots" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Planters & Pots</h3>
@@ -683,7 +800,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-industry"></i> UCMPL</h3>
+                    <h3><i class="fas fa-industry"></i> Plastic Global</h3>
                     <p>Ultra Craft Molders Pvt. Ltd. - Your trusted partner for premium plastic packaging solutions worldwide.</p>
                     <div style="margin-top: 1rem;">
                         <a href="#" style="margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
@@ -719,7 +836,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 UCMPL - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
+                <p>&copy; 2025 Plastic Global - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
             </div>
         </div>
     </footer>
@@ -765,33 +882,33 @@
             const description = document.getElementById('modal-description');
             
             const productData = {
-                caps: {
-                    title: 'Plastic Caps & Closures',
-                    description: 'Our plastic caps and closures are manufactured using high-quality HDPE and PP materials. They feature child-resistant mechanisms, tamper-evident seals, and are available in custom colors and sizes. Perfect for FMCG, food & beverage, and pharmaceutical industries. All products meet FDA standards and are designed for optimal performance and durability.'
-                },
                 bottles: {
-                    title: 'HDPE & PP Bottles',
-                    description: 'High-density polyethylene and polypropylene bottles designed for various industrial and consumer applications. Features include excellent chemical resistance, UV protection, custom shapes and sizes, and food-grade materials. These bottles are ideal for packaging liquids, chemicals, and consumer products with superior durability and performance.'
+                    title: 'Plastic Bottles',
+                    description: 'High-quality plastic bottles for FMCG, food & beverage, and pharmaceutical industries with excellent durability and chemical resistance. Our bottles are manufactured using HDPE and PP materials with features including chemical resistance, UV protection, custom shapes and sizes, and food-grade materials. Perfect for packaging liquids, chemicals, and consumer products with superior durability and performance.'
                 },
-                automotive: {
-                    title: 'Automotive Components',
-                    description: 'Precision-molded automotive parts and components manufactured to meet international quality standards. Our automotive components feature high precision molding, heat-resistant materials, custom tooling capabilities, and ISO certified production processes. Perfect for the automotive industry with reliable performance and durability.'
+                caps: {
+                    title: 'Bottle Caps & Closures',
+                    description: 'Premium bottle caps and closures for various packaging applications including pharma, cosmetics, edible oil, and general packaging. Our caps feature child-resistant closures, tamper-evident seals, custom colors and sizes, and multiple material options. All products meet FDA standards and are designed for optimal performance and durability.'
                 },
-                containers: {
-                    title: 'Packaging Containers',
-                    description: 'Custom plastic containers and jars designed for pharmaceutical, cosmetic, and food packaging needs. Features include custom design solutions, multiple material options, batch consistency, and quick turnaround times. These containers offer superior quality and are perfect for various packaging applications.'
+                barricades: {
+                    title: 'Road Barricades',
+                    description: 'Durable road barricades and traffic safety equipment for construction sites and road safety applications. Our barricades feature high visibility design, weather resistance, lightweight construction, and easy installation. Made from high-quality HDPE material, these barricades are perfect for construction and road safety applications.'
+                },
+                solar: {
+                    title: 'HDPE Solar Floats',
+                    description: 'High-density polyethylene solar floats for renewable energy applications with excellent buoyancy and durability. Our solar floats feature UV resistant material, excellent buoyancy, corrosion resistance, and long-lasting design. Perfect for solar panel installations and renewable energy applications.'
                 },
                 pallets: {
-                    title: 'Plastic Pallets',
-                    description: 'Durable and lightweight plastic pallets designed for efficient material handling and logistics operations. Features include heavy-duty construction, hygienic and washable design, nestable structure, and export quality standards. Perfect for warehouse and logistics operations with excellent durability.'
+                    title: 'Pallets & Sleeves',
+                    description: 'Durable plastic pallets, sleeves, and boxes for efficient material handling and logistics operations. Our pallets feature heavy-duty construction, hygienic and washable design, nestable structure, and export quality standards. Perfect for warehouse and logistics operations with excellent durability and performance.'
                 },
-                pharmaceutical: {
-                    title: 'Pharmaceutical Packaging',
-                    description: 'FDA-approved pharmaceutical containers and packaging solutions for the global healthcare industry. Features include FDA approved materials, tamper-evident features, child-resistant options, and batch traceability. These products meet the highest standards for pharmaceutical packaging and are trusted by healthcare companies worldwide.'
+                planters: {
+                    title: 'Planters & Pots',
+                    description: 'Garden planters and pots for horticulture and decorative applications with various sizes and designs. Our planters feature weather resistance, various sizes available, decorative designs, and drainage features. Made from HDPE and PP materials, these planters are perfect for gardening and decorative applications.'
                 }
             };
             
-            const data = productData[productType] || productData.caps;
+            const data = productData[productType] || productData.bottles;
             title.textContent = data.title;
             description.textContent = data.description;
             

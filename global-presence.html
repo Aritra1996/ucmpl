@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Presence - UCMPL | Export Markets Worldwide</title>
-    <meta name="description" content="Discover UCMPL's global export presence across 20+ countries. Explore our international markets, export statistics, and worldwide distribution network.">
-    <meta name="keywords" content="global presence, export markets, international trade, worldwide distribution, UCMPL exports">
+    <title>Global Presence - Plastic Global | Export Markets Worldwide</title>
+    <meta name="description" content="Discover Plastic Global's global export presence across 20+ countries. Explore our international markets, export statistics, and worldwide distribution network.">
+    <meta name="keywords" content="global presence, export markets, international trade, worldwide distribution, Plastic Global exports">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Global Presence - UCMPL | Export Markets Worldwide">
-    <meta property="og:description" content="Discover UCMPL's global export presence across 20+ countries worldwide.">
+    <meta property="og:title" content="Global Presence - Plastic Global | Export Markets Worldwide">
+    <meta property="og:description" content="Discover Plastic Global's global export presence across 20+ countries worldwide.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ucmpl.com/global-presence">
+    <meta property="og:url" content="https://plasticglobal.com/global-presence">
     <meta property="og:image" content="assets/images/og-global.jpg">
     
     <!-- Favicon -->
@@ -87,24 +87,169 @@
         
         .map-container {
             position: relative;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
         
         .world-map {
             width: 100%;
-            height: 400px;
-            background: var(--gradient-dark);
+            height: 500px;
+            background: linear-gradient(135deg, #1a1f2e 0%, #2a345b 50%, #1a1f2e 100%);
             border-radius: var(--radius-lg);
             position: relative;
             overflow: hidden;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 8rem;
+        }
+        
+        .globe-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 0 auto;
+        }
+        
+        .globe {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateGlobe 20s linear infinite;
+        }
+        
+        .globe-sphere {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: 
+                radial-gradient(circle at 30% 30%, #2a345b 0%, #1a1f2e 50%, #0f1419 100%),
+                radial-gradient(circle at 70% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+            position: relative;
+            transform-style: preserve-3d;
+            box-shadow: 
+                inset -40px -40px 80px rgba(0, 0, 0, 0.8),
+                inset 30px 30px 60px rgba(0, 212, 255, 0.15),
+                0 0 80px rgba(0, 212, 255, 0.4),
+                0 30px 60px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(0, 212, 255, 0.2);
+        }
+        
+        .globe-sphere::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .globe-sphere::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: 
+                linear-gradient(90deg, transparent 48%, rgba(0, 212, 255, 0.1) 50%, transparent 52%),
+                linear-gradient(0deg, transparent 48%, rgba(0, 212, 255, 0.1) 50%, transparent 52%),
+                linear-gradient(45deg, transparent 48%, rgba(0, 255, 136, 0.05) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(0, 255, 136, 0.05) 50%, transparent 52%);
+            pointer-events: none;
+        }
+        
+        .country-labels {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .country {
+            position: absolute;
+            background: rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.5);
+            border-radius: 3px;
+            padding: 3px 8px;
+            font-size: 0.8rem;
             color: var(--brand-primary);
-            opacity: 0.3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            z-index: 3;
+        }
+        
+        .country:hover {
+            background: rgba(0, 255, 136, 0.4);
+            border-color: var(--brand-secondary);
+            transform: scale(1.1);
+        }
+        
+        .country.active {
+            background: rgba(0, 255, 136, 0.6) !important;
+            border-color: var(--brand-secondary) !important;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+        
+        .country-name {
+            font-weight: 600;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+        }
+        
+        /* Country positions on globe - spread out to prevent overlapping */
+        .country.usa { top: 30%; left: 15%; }
+        .country.canada { top: 20%; left: 12%; }
+        .country.uk { top: 25%; left: 45%; }
+        .country.germany { top: 28%; left: 50%; }
+        .country.france { top: 32%; left: 47%; }
+        .country.japan { top: 30%; left: 80%; }
+        .country.korea { top: 28%; left: 78%; }
+        .country.australia { top: 75%; left: 80%; }
+        .country.brazil { top: 65%; left: 25%; }
+        .country.mexico { top: 35%; left: 10%; }
+        .country.saudi { top: 40%; left: 58%; }
+        .country.south-africa { top: 70%; left: 55%; }
+        
+        @keyframes rotateGlobe {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+        
+        .world-map::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .map-svg {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
         }
         
         .map-pins {
@@ -113,22 +258,41 @@
             left: 0;
             right: 0;
             bottom: 0;
+            z-index: 3;
         }
         
         .map-pin {
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 12px;
+            height: 12px;
             background: var(--brand-primary);
             border-radius: 50%;
-            animation: pulse 2s infinite;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+            animation: pulse 2s infinite;
         }
         
         .map-pin:hover {
-            transform: scale(1.5);
+            transform: scale(1.8);
             background: var(--brand-secondary);
+            box-shadow: 0 0 0 8px rgba(0, 255, 136, 0.3);
+        }
+        
+        .map-pin.active {
+            transform: scale(1.8);
+            background: var(--brand-secondary);
+            box-shadow: 0 0 0 12px rgba(0, 255, 136, 0.4);
+            animation: activePulse 1s infinite;
+        }
+        
+        @keyframes activePulse {
+            0%, 100% {
+                box-shadow: 0 0 0 12px rgba(0, 255, 136, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(0, 255, 136, 0.1);
+            }
         }
         
         .map-pin::after {
@@ -136,12 +300,45 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 212, 255, 0.3);
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 212, 255, 0.2);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             animation: ripple 2s infinite;
+        }
+        
+        .pin-tooltip {
+            position: absolute;
+            background: rgba(15, 20, 25, 0.95);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 10;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .map-pin:hover .pin-tooltip {
+            opacity: 1;
+            transform: translateY(-40px);
+        }
+        
+        .pin-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: rgba(15, 20, 25, 0.95);
         }
         
         @keyframes ripple {
@@ -155,19 +352,55 @@
             }
         }
         
-        /* Pin positions (approximate) */
-        .pin-usa { top: 25%; left: 15%; }
-        .pin-uk { top: 20%; left: 45%; }
-        .pin-germany { top: 25%; left: 50%; }
-        .pin-france { top: 30%; left: 47%; }
-        .pin-canada { top: 15%; left: 12%; }
-        .pin-australia { top: 70%; left: 75%; }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+            }
+        }
+        
+        /* Pin positions for globe layout - updated to match country positions */
+        .pin-usa { top: 30%; left: 15%; }
+        .pin-canada { top: 20%; left: 12%; }
+        .pin-uk { top: 25%; left: 45%; }
+        .pin-germany { top: 28%; left: 50%; }
+        .pin-france { top: 32%; left: 47%; }
         .pin-japan { top: 30%; left: 80%; }
-        .pin-korea { top: 25%; left: 78%; }
-        .pin-saudi { top: 40%; left: 55%; }
-        .pin-south-africa { top: 65%; left: 52%; }
-        .pin-brazil { top: 60%; left: 25%; }
-        .pin-mexico { top: 35%; left: 8%; }
+        .pin-korea { top: 28%; left: 78%; }
+        .pin-australia { top: 75%; left: 80%; }
+        .pin-brazil { top: 65%; left: 25%; }
+        .pin-mexico { top: 35%; left: 10%; }
+        .pin-saudi { top: 40%; left: 58%; }
+        .pin-south-africa { top: 70%; left: 55%; }
+        
+        .map-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--brand-primary);
+            animation: pulse 2s infinite;
+        }
         
         /* Export Statistics */
         .export-stats {
@@ -453,6 +686,124 @@
             font-size: 0.9rem;
         }
         
+        /* CTA Section Buttons */
+        .cta-section .btn-cta {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            color: var(--primary-bg) !important;
+            border: 2px solid #00ff88 !important;
+            box-shadow: 
+                0 4px 15px rgba(0, 255, 136, 0.3) !important,
+                0 0 20px rgba(0, 255, 136, 0.2) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        
+        .cta-section .btn-cta::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+            transition: left 0.5s !important;
+        }
+        
+        .cta-section .btn-cta:hover::before {
+            left: 100% !important;
+        }
+        
+        .cta-section .btn-cta:hover {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            box-shadow: 
+                0 6px 20px rgba(0, 255, 136, 0.4) !important,
+                0 0 30px rgba(0, 255, 136, 0.3) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        .cta-section .btn-outline {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            color: var(--primary-bg) !important;
+            border: 2px solid #00ff88 !important;
+            box-shadow: 
+                0 4px 15px rgba(0, 255, 136, 0.3) !important,
+                0 0 20px rgba(0, 255, 136, 0.2) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        
+        .cta-section .btn-outline::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+            transition: left 0.5s !important;
+        }
+        
+        .cta-section .btn-outline:hover::before {
+            left: 100% !important;
+        }
+        
+        .cta-section .btn-outline:hover {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%) !important;
+            box-shadow: 
+                0 6px 20px rgba(0, 255, 136, 0.4) !important,
+                0 0 30px rgba(0, 255, 136, 0.3) !important,
+                inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        
+        .cta-section .btn-hero {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            min-width: 180px;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-section .btn-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-section .btn-hero:hover::before {
+            left: 100%;
+        }
+        
+        .cta-section .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-section .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .page-title {
@@ -493,7 +844,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">
-                    <i class="fas fa-industry"></i> UCMPL
+                    <i class="fas fa-industry"></i> Plastic Global
                 </a>
                 
                 <nav class="nav">
@@ -529,20 +880,106 @@
             
             <div class="map-container scroll-reveal">
                 <div class="world-map">
-                    <i class="fas fa-globe"></i>
-                    <div class="map-pins">
-                        <div class="map-pin pin-usa" title="United States"></div>
-                        <div class="map-pin pin-uk" title="United Kingdom"></div>
-                        <div class="map-pin pin-germany" title="Germany"></div>
-                        <div class="map-pin pin-france" title="France"></div>
-                        <div class="map-pin pin-canada" title="Canada"></div>
-                        <div class="map-pin pin-australia" title="Australia"></div>
-                        <div class="map-pin pin-japan" title="Japan"></div>
-                        <div class="map-pin pin-korea" title="South Korea"></div>
-                        <div class="map-pin pin-saudi" title="Saudi Arabia"></div>
-                        <div class="map-pin pin-south-africa" title="South Africa"></div>
-                        <div class="map-pin pin-brazil" title="Brazil"></div>
-                        <div class="map-pin pin-mexico" title="Mexico"></div>
+                    <div class="globe-container">
+                        <!-- Static 3D Globe -->
+                        <div class="globe">
+                            <div class="globe-sphere"></div>
+                        </div>
+                        
+                        <!-- Static country labels (not rotating) -->
+                        <div class="country-labels">
+                            <div class="country usa" data-country="USA">
+                                <div class="country-name">USA</div>
+                            </div>
+                            <div class="country canada" data-country="Canada">
+                                <div class="country-name">Canada</div>
+                            </div>
+                            <div class="country uk" data-country="UK">
+                                <div class="country-name">UK</div>
+                            </div>
+                            <div class="country germany" data-country="Germany">
+                                <div class="country-name">Germany</div>
+                            </div>
+                            <div class="country france" data-country="France">
+                                <div class="country-name">France</div>
+                            </div>
+                            <div class="country japan" data-country="Japan">
+                                <div class="country-name">Japan</div>
+                            </div>
+                            <div class="country korea" data-country="Korea">
+                                <div class="country-name">Korea</div>
+                            </div>
+                            <div class="country australia" data-country="Australia">
+                                <div class="country-name">Australia</div>
+                            </div>
+                            <div class="country brazil" data-country="Brazil">
+                                <div class="country-name">Brazil</div>
+                            </div>
+                            <div class="country mexico" data-country="Mexico">
+                                <div class="country-name">Mexico</div>
+                            </div>
+                            <div class="country saudi" data-country="Saudi Arabia">
+                                <div class="country-name">Saudi Arabia</div>
+                            </div>
+                            <div class="country south-africa" data-country="South Africa">
+                                <div class="country-name">South Africa</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating pins for countries -->
+                        <div class="map-pins">
+                            <div class="map-pin pin-usa" data-country="USA">
+                                <div class="pin-tooltip">United States<br>150+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-canada" data-country="Canada">
+                                <div class="pin-tooltip">Canada<br>70+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-uk" data-country="UK">
+                                <div class="pin-tooltip">United Kingdom<br>80+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-germany" data-country="Germany">
+                                <div class="pin-tooltip">Germany<br>60+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-france" data-country="France">
+                                <div class="pin-tooltip">France<br>40+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-japan" data-country="Japan">
+                                <div class="pin-tooltip">Japan<br>30+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-korea" data-country="Korea">
+                                <div class="pin-tooltip">South Korea<br>25+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-australia" data-country="Australia">
+                                <div class="pin-tooltip">Australia<br>50+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-brazil" data-country="Brazil">
+                                <div class="pin-tooltip">Brazil<br>35+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-mexico" data-country="Mexico">
+                                <div class="pin-tooltip">Mexico<br>45+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-saudi" data-country="Saudi Arabia">
+                                <div class="pin-tooltip">Saudi Arabia<br>20+ Clients</div>
+                            </div>
+                            <div class="map-pin pin-south-africa" data-country="South Africa">
+                                <div class="pin-tooltip">South Africa<br>15+ Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot"></div>
+                        <span>Export Destinations</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: var(--brand-secondary);"></div>
+                        <span>Active Markets</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: var(--text-muted);"></div>
+                        <span>Expanding Markets</span>
                     </div>
                 </div>
             </div>
@@ -719,7 +1156,7 @@
             
             <div class="testimonials-grid">
                 <div class="testimonial-card scroll-reveal">
-                    <p class="testimonial-quote">"UCMPL has been our trusted partner for plastic packaging solutions for over 3 years. Their quality and reliability are unmatched in the industry."</p>
+                    <p class="testimonial-quote">"Plastic Global has been our trusted partner for plastic packaging solutions for over 3 years. Their quality and reliability are unmatched in the industry."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">JS</div>
                         <div class="author-info">
@@ -730,7 +1167,7 @@
                 </div>
                 
                 <div class="testimonial-card scroll-reveal">
-                    <p class="testimonial-quote">"The team at UCMPL understands our requirements perfectly and delivers consistently high-quality products on time. Highly recommended!"</p>
+                    <p class="testimonial-quote">"The team at Plastic Global understands our requirements perfectly and delivers consistently high-quality products on time. Highly recommended!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">MS</div>
                         <div class="author-info">
@@ -741,7 +1178,7 @@
                 </div>
                 
                 <div class="testimonial-card scroll-reveal">
-                    <p class="testimonial-quote">"Excellent service and product quality. UCMPL's export process is smooth and their customer support is outstanding."</p>
+                    <p class="testimonial-quote">"Excellent service and product quality. Plastic Global's export process is smooth and their customer support is outstanding."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">TY</div>
                         <div class="author-info">
@@ -758,7 +1195,7 @@
     <section class="cta-section section">
         <div class="container">
             <div class="cta-content text-center scroll-reveal">
-                <h2 class="cta-title">Ready to Export with UCMPL?</h2>
+                <h2 class="cta-title">Ready to Export with Plastic Global?</h2>
                 <p class="cta-subtitle">Join our global network of satisfied customers and experience export excellence</p>
                 <div class="hero-cta">
                     <a href="contact.html" class="btn btn-cta btn-hero">
@@ -777,7 +1214,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-industry"></i> UCMPL</h3>
+                    <h3><i class="fas fa-industry"></i> Plastic Global</h3>
                     <p>Ultra Craft Molders Pvt. Ltd. - Your trusted partner for premium plastic packaging solutions worldwide.</p>
                     <div style="margin-top: 1rem;">
                         <a href="#" style="margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
@@ -813,7 +1250,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 UCMPL - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
+                <p>&copy; 2025 Plastic Global - Ultra Craft Molders Pvt. Ltd. All rights reserved. | Export Excellence Since 2015</p>
             </div>
         </div>
     </footer>
@@ -821,5 +1258,114 @@
     <!-- Main JavaScript -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/animations.js"></script>
+    
+    <!-- Interactive Map JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mapPins = document.querySelectorAll('.map-pin');
+            const countries = document.querySelectorAll('.country');
+            const globe = document.querySelector('.globe');
+            
+            // Add click functionality to map pins
+            mapPins.forEach(pin => {
+                pin.addEventListener('click', function() {
+                    // Remove active class from all pins and countries
+                    mapPins.forEach(p => p.classList.remove('active'));
+                    countries.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked pin
+                    this.classList.add('active');
+                    
+                    // Find corresponding country and highlight it
+                    const countryName = this.getAttribute('data-country');
+                    const country = document.querySelector(`.country[data-country="${countryName}"]`);
+                    if (country) {
+                        country.classList.add('active');
+                    }
+                    
+                    // Add a special effect
+                    this.style.transform = 'scale(2)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1.8)';
+                    }, 200);
+                });
+                
+                // Add hover effects
+                pin.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 0 0 15px rgba(0, 255, 136, 0.2)';
+                    
+                    // Highlight corresponding country
+                    const countryName = this.getAttribute('data-country');
+                    const country = document.querySelector(`.country[data-country="${countryName}"]`);
+                    if (country) {
+                        country.style.background = 'rgba(0, 255, 136, 0.6)';
+                        country.style.borderColor = 'var(--brand-secondary)';
+                    }
+                });
+                
+                pin.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.boxShadow = '0 0 0 0 rgba(0, 212, 255, 0.7)';
+                    }
+                    
+                    // Reset country highlight
+                    const countryName = this.getAttribute('data-country');
+                    const country = document.querySelector(`.country[data-country="${countryName}"]`);
+                    if (country && !country.classList.contains('active')) {
+                        country.style.background = 'rgba(0, 212, 255, 0.3)';
+                        country.style.borderColor = 'rgba(0, 212, 255, 0.5)';
+                    }
+                });
+            });
+            
+            // Add click functionality to countries
+            countries.forEach(country => {
+                country.addEventListener('click', function() {
+                    // Remove active class from all pins and countries
+                    mapPins.forEach(p => p.classList.remove('active'));
+                    countries.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked country
+                    this.classList.add('active');
+                    
+                    // Find corresponding pin and highlight it
+                    const countryName = this.getAttribute('data-country');
+                    const pin = document.querySelector(`.map-pin[data-country="${countryName}"]`);
+                    if (pin) {
+                        pin.classList.add('active');
+                        pin.style.transform = 'scale(1.8)';
+                    }
+                });
+            });
+            
+            // Pause globe rotation on hover
+            const globeContainer = document.querySelector('.globe-container');
+            if (globeContainer) {
+                globeContainer.addEventListener('mouseenter', function() {
+                    globe.style.animationPlayState = 'paused';
+                });
+                
+                globeContainer.addEventListener('mouseleave', function() {
+                    globe.style.animationPlayState = 'running';
+                });
+            }
+            
+            // Add floating animation to the map
+            const worldMap = document.querySelector('.world-map');
+            if (worldMap) {
+                let floatDirection = 1;
+                setInterval(() => {
+                    const currentTransform = worldMap.style.transform || 'translateY(0px)';
+                    const currentY = parseFloat(currentTransform.match(/-?\d+/) || [0])[0];
+                    const newY = currentY + (floatDirection * 0.3);
+                    
+                    if (newY > 3) floatDirection = -1;
+                    if (newY < -3) floatDirection = 1;
+                    
+                    worldMap.style.transform = `translateY(${newY}px)`;
+                }, 50);
+            }
+        });
+    </script>
 </body>
 </html>
