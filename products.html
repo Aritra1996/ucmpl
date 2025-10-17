@@ -485,6 +485,101 @@
             flex-wrap: wrap;
         }
         
+        /* Mobile Menu Fixes */
+        .header {
+            overflow: visible !important;
+        }
+        
+        .header-content {
+            overflow: visible !important;
+        }
+        
+        .container {
+            overflow: visible !important;
+        }
+        
+        .nav.active {
+            display: flex !important;
+            position: fixed !important;
+            top: 80px !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100vw !important;
+            max-width: 100vw !important;
+            background: #1a1f2e !important;
+            flex-direction: column !important;
+            padding: 15px 20px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+            z-index: 99999 !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            transform: none !important;
+            animation: none !important;
+            margin: 0 !important;
+            border-radius: 0 !important;
+        }
+        
+        .nav.active a {
+            display: block !important;
+            padding: 8px 20px !important;
+            margin: 2px 0 !important;
+            color: var(--text-primary) !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            border-radius: 4px !important;
+            cursor: pointer !important;
+        }
+        
+        .nav.active a::before {
+            content: '' !important;
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 20px !important;
+            right: 20px !important;
+            height: 2px !important;
+            background: linear-gradient(90deg, #00ff88, #00d4ff) !important;
+            transform: scaleX(0) !important;
+            transition: transform 0.3s ease !important;
+            box-shadow: 0 0 8px rgba(0, 255, 136, 0.5) !important;
+        }
+        
+        .nav.active a:hover,
+        .nav.active a:active,
+        .nav.active a:focus {
+            color: #00ff88 !important;
+            background: rgba(0, 255, 136, 0.1) !important;
+            outline: none !important;
+        }
+        
+        .nav.active a:hover::before,
+        .nav.active a:active::before,
+        .nav.active a:focus::before {
+            transform: scaleX(1) !important;
+        }
+        
+        /* Touch device active state */
+        @media (hover: none) and (pointer: coarse) {
+            .nav.active a:active {
+                color: #00ff88 !important;
+                background: rgba(0, 255, 136, 0.1) !important;
+            }
+            
+            .nav.active a:active::before {
+                transform: scaleX(1) !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                display: none !important;
+            }
+            
+            .nav.active {
+                display: flex !important;
+            }
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .page-title {
@@ -844,6 +939,120 @@
     <!-- Main JavaScript -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/animations.js"></script>
+    
+    <!-- Mobile Menu Fix -->
+    <script>
+        // Mobile menu functionality
+        let mobileMenuInitialized = false;
+        
+        const fixMobileMenu = () => {
+            if (mobileMenuInitialized) return;
+            
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.nav');
+            
+            if (mobileToggle && nav) {
+                mobileToggle.addEventListener('click', handleMobileMenuClick);
+                mobileToggle.onclick = function(e) {
+                    handleMobileMenuClick(e);
+                };
+                
+                const navLinks = nav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', closeMobileMenu);
+                });
+                
+                mobileMenuInitialized = true;
+            }
+        };
+        
+        const handleMobileMenuClick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const nav = document.querySelector('.nav');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (nav && mobileToggle) {
+                nav.classList.toggle('active');
+                mobileToggle.classList.toggle('active');
+                
+                if (nav.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                    // Clear all forced styles when closing
+                    nav.style.removeProperty('display');
+                    nav.style.removeProperty('position');
+                    nav.style.removeProperty('top');
+                    nav.style.removeProperty('left');
+                    nav.style.removeProperty('right');
+                    nav.style.removeProperty('width');
+                    nav.style.removeProperty('max-width');
+                    nav.style.removeProperty('height');
+                    nav.style.removeProperty('min-height');
+                    nav.style.removeProperty('background');
+                    nav.style.removeProperty('flex-direction');
+                    nav.style.removeProperty('padding');
+                    nav.style.removeProperty('box-shadow');
+                    nav.style.removeProperty('z-index');
+                    nav.style.removeProperty('visibility');
+                    nav.style.removeProperty('opacity');
+                    nav.style.removeProperty('transform');
+                    nav.style.removeProperty('margin');
+                    nav.style.removeProperty('border-radius');
+                }
+            }
+        };
+        
+        const closeMobileMenu = function() {
+            const nav = document.querySelector('.nav');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (nav && mobileToggle) {
+                nav.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                // Clear all forced styles when closing
+                nav.style.removeProperty('display');
+                nav.style.removeProperty('position');
+                nav.style.removeProperty('top');
+                nav.style.removeProperty('left');
+                nav.style.removeProperty('right');
+                nav.style.removeProperty('width');
+                nav.style.removeProperty('max-width');
+                nav.style.removeProperty('height');
+                nav.style.removeProperty('min-height');
+                nav.style.removeProperty('background');
+                nav.style.removeProperty('flex-direction');
+                nav.style.removeProperty('padding');
+                nav.style.removeProperty('box-shadow');
+                nav.style.removeProperty('z-index');
+                nav.style.removeProperty('visibility');
+                nav.style.removeProperty('opacity');
+                nav.style.removeProperty('transform');
+                nav.style.removeProperty('margin');
+                nav.style.removeProperty('border-radius');
+            }
+        };
+        
+        const handleClickOutside = function(e) {
+            const nav = document.querySelector('.nav');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (nav && nav.classList.contains('active')) {
+                if (!nav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            }
+        };
+        
+        // Initialize mobile menu
+        document.addEventListener('DOMContentLoaded', fixMobileMenu);
+        window.addEventListener('load', fixMobileMenu);
+        document.addEventListener('click', handleClickOutside);
+    </script>
     
     <!-- Products Page JavaScript -->
     <script>
