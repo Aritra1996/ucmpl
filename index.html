@@ -166,6 +166,9 @@
         .stats-section {
             background: var(--gradient-dark);
             position: relative;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
         
         .stats-section::before {
@@ -180,12 +183,28 @@
             z-index: 0;
         }
         
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
         .stat-item {
             background: rgba(26, 31, 46, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 212, 255, 0.2);
             position: relative;
             z-index: 1;
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 8px;
         }
         
         .stat-item:hover {
@@ -196,6 +215,18 @@
         /* Products Preview */
         .products-preview {
             background: var(--primary-bg);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
         
         .product-card {
@@ -232,6 +263,18 @@
         .global-presence {
             background: var(--gradient-accent);
             position: relative;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
         
         .global-presence::before {
@@ -323,6 +366,19 @@
             cursor: pointer !important;
         }
         
+        /* Prevent horizontal scrolling */
+        body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            max-width: 100vw !important;
+        }
+        
+        html {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            max-width: 100vw !important;
+        }
+        
         /* Ensure header stays visible */
         .header {
             z-index: 10000 !important;
@@ -341,7 +397,16 @@
         }
         
         .container {
-            overflow: visible !important;
+            overflow-x: hidden !important;
+            width: 100% !important;
+            max-width: 100vw !important;
+        }
+        
+        /* Ensure all sections prevent horizontal overflow */
+        .section {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            max-width: 100vw !important;
         }
         
         .header.scrolled {
@@ -471,6 +536,26 @@
             
             .cta-title {
                 font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-item {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .countries-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 0.5rem;
             }
         }
         
