@@ -1,6 +1,6 @@
-# UCMPL Export Website
+# Plastik Global Export Website
 
-A complete export-focused website for **Ultra Craft Molders Pvt. Ltd. (UCMPL)** built with HTML, CSS, and vanilla JavaScript. This modern, dark-themed website showcases UCMPL's products, export capabilities, and global presence.
+A complete export-focused website for **Plastik Global** built with HTML, CSS, and vanilla JavaScript. This modern, dark-themed website showcases Plastik Global's products, export capabilities, and global presence.
 
 ## 🌟 Features
 
@@ -51,7 +51,7 @@ A complete export-focused website for **Ultra Craft Molders Pvt. Ltd. (UCMPL)** 
 
 ### File Structure
 ```
-ucmpl-export-website/
+plastik-global-export-website/
 ├── index.html              # Homepage
 ├── about.html              # About Us page
 ├── products.html           # Products page
@@ -123,16 +123,16 @@ The website is fully responsive with breakpoints at:
 
 ## 📞 Contact Information
 
-For questions about this website or UCMPL's services:
+For questions about this website or Plastik Global's services:
 
-- **Company**: Ultra Craft Molders Pvt. Ltd.
+- **Company**: Plastik Global.
 - **Location**: Haridwar, Uttarakhand, India
 - **Email**: info@ucmpl.com
 - **Website**: https://ucmpl.com
 
 ## 📄 License
 
-This website is created for UCMPL - Ultra Craft Molders Pvt. Ltd. All rights reserved.
+This website is created for Plastik Global. All rights reserved.
 
 ## 🚀 Deployment
 

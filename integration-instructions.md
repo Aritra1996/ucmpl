@@ -1,7 +1,7 @@
-# UCMPL Exports Section - Integration Instructions
+# Plastik Global Exports Section - Integration Instructions
 
 ## Overview
-This document provides complete instructions for integrating the new "Our Global Exports" section into your UCMPL website. The section has been designed to perfectly match your existing design system and branding.
+This document provides complete instructions for integrating the new "Our Global Exports" section into your Plastik Global website. The section has been designed to perfectly match your existing design system and branding.
 
 ## Files Created
 1. `exports-section.html` - Complete HTML code for the exports section
@@ -49,7 +49,7 @@ After inserting the code:
 
 ### ✅ Content Elements
 - **Section Header**: "Our Global Exports" with brand styling
-- **Intro Paragraph**: Professional description of UCMPL's international presence
+- **Intro Paragraph**: Professional description of Plastik Global's international presence
 - **Stats Counter**: Animated counters showing:
   - 15+ Countries
   - 500+ International Clients  

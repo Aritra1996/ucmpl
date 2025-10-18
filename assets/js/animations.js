@@ -1,4 +1,4 @@
-// UCMPL Export Website - Advanced Animations
+// Plastik Global Export Website - Advanced Animations
 // Enhanced scroll animations and interactive effects
 
 class AnimationController {

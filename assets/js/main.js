@@ -1,4 +1,4 @@
-// UCMPL Export Website - Main JavaScript
+// Plastik Global Export Website - Main JavaScript
 // Professional Export Website with Dark Theme
 
 class UCMPLWebsite {
