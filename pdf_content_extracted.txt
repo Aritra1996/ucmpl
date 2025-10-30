@@ -1,0 +1,102 @@
+PDF CONTENT EXTRACTION RESULTS
+================================================================================
+
+
+================================================================================
+FILE: NewEspoCatalogTable.pdf
+PATH: C:\Users\DELL\Downloads\ucmpl\brochures\NewEspoCatalogTable.pdf
+================================================================================
+
+PAGES: 2
+METADATA:
+  title: flyer.cdr
+  author: DELL
+  creator: CorelDRAW 2021
+  producer: Corel PDF Engine Version 23.0.0.363
+  creation_date: D:20241225133947+05'30'
+  modification_date: D:20241225133947+05'30'
+
+FULL TEXT:
+--- Page 1 ---
+
+
+--- Page 2 ---
+
+
+
+
+================================================================================
+FILE: UCMPLbrochureNew.pdf
+PATH: C:\Users\DELL\Downloads\ucmpl\brochures\UCMPLbrochureNew.pdf
+================================================================================
+
+PAGES: 6
+METADATA:
+  title: cap brochure.cdr
+  author: DELL
+  creator: CorelDRAW X8
+  producer: Corel PDF Engine Version 18.0.0.448
+  creation_date: D:20240523153405+05'30'
+  modification_date: D:20240523153405+05'30'
+
+FULL TEXT:
+--- Page 1 ---
+
+
+--- Page 2 ---
+
+
+--- Page 3 ---
+
+
+--- Page 4 ---
+
+
+--- Page 5 ---
+
+
+--- Page 6 ---
+
+
+
+
+================================================================================
+FILE: UltracraftMoldersBLOWPRODUCTS.pdf
+PATH: C:\Users\DELL\Downloads\ucmpl\brochures\UltracraftMoldersBLOWPRODUCTS.pdf
+================================================================================
+
+PAGES: 8
+METADATA:
+  title: eco base.cdr
+  author: DELL
+  creator: CorelDRAW X8
+  producer: Corel PDF Engine Version 18.0.0.448
+  creation_date: D:20240517114448+05'30'
+  modification_date: D:20240517114448+05'30'
+
+FULL TEXT:
+--- Page 1 ---
+
+
+--- Page 2 ---
+
+
+--- Page 3 ---
+
+
+--- Page 4 ---
+
+
+--- Page 5 ---
+
+
+--- Page 6 ---
+
+
+--- Page 7 ---
+
+
+--- Page 8 ---
+
+
+

@@ -81,8 +81,9 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
             margin-bottom: 3rem;
+            padding: 0 1rem;
         }
         
         .category-tab {
@@ -94,6 +95,28 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            min-width: fit-content;
+        }
+        
+        @media (max-width: 768px) {
+            .category-tabs {
+                gap: 0.5rem;
+                padding: 0;
+            }
+            
+            .category-tab {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .category-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
         }
         
         .category-tab.active,
@@ -104,10 +127,35 @@
             transform: translateY(-2px);
         }
         
+        .category-tab:active {
+            transform: translateY(0);
+        }
+        
+        @media (hover: none) and (pointer: coarse) {
+            .category-tab:active {
+                background: var(--gradient-primary);
+                color: var(--primary-bg);
+            }
+        }
+        
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
         }
         
         .product-card {
@@ -125,9 +173,15 @@
             border-color: var(--brand-primary);
         }
         
+        @media (hover: none) and (pointer: coarse) {
+            .product-card:active {
+                transform: translateY(-5px);
+            }
+        }
+        
         .product-image {
-            height: 250px;
-            background: var(--gradient-dark);
+            height: 280px;
+            background: var(--primary-bg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -135,6 +189,18 @@
             color: var(--brand-primary);
             position: relative;
             overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            padding: 8px;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
         }
         
         .product-image::before {
@@ -147,10 +213,63 @@
             background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 136, 0.1) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
+            z-index: 1;
         }
         
         .product-card:hover .product-image::before {
             opacity: 1;
+        }
+        
+        /* Gallery Image Cards */
+        .gallery-card {
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .gallery-card::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 2rem;
+            color: var(--brand-primary);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .gallery-card:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .gallery-card:active {
+            transform: scale(0.98);
+        }
+        
+        .gallery-card .product-image {
+            height: 320px;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-card .product-image {
+                height: 260px;
+            }
+            
+            .gallery-card::after {
+                content: '👆';
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (hover: none) and (pointer: coarse) {
+            .gallery-card::after {
+                opacity: 0.7;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
         }
         
         .product-content {
@@ -580,33 +699,230 @@
             }
         }
         
-        /* Responsive Design */
+        /* Image Lightbox Modal */
+        .image-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10001;
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .image-lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -2.5rem;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--text-primary);
+            font-size: 2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        
         @media (max-width: 768px) {
+            .lightbox-close {
+                top: -3rem;
+                right: 50%;
+                transform: translateX(50%);
+            }
+        }
+        
+        /* Product Gallery Section */
+        .product-gallery {
+            background: var(--primary-bg);
+            padding: 5rem 0;
+        }
+        
+        .gallery-section {
+            margin-bottom: 4rem;
+        }
+        
+        .gallery-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .gallery-section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .page-header {
+                padding: 6rem 0 3rem;
+            }
+            
+            .product-categories,
+            .product-gallery,
+            .export-capabilities,
+            .quality-standards {
+                padding: 4rem 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 5rem 0 2.5rem;
+            }
+            
             .page-title {
                 font-size: 2.5rem;
             }
             
-            .category-tabs {
-                flex-direction: column;
-                align-items: center;
+            .page-subtitle {
+                font-size: 1.1rem;
             }
             
-            .products-grid {
-                grid-template-columns: 1fr;
+            .product-categories,
+            .product-gallery,
+            .export-capabilities,
+            .quality-standards {
+                padding: 3rem 0;
+            }
+            
+            .gallery-section {
+                margin-bottom: 3rem;
+            }
+            
+            .gallery-section-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .product-content {
+                padding: 1.5rem;
+            }
+            
+            .product-title {
+                font-size: 1.25rem;
+            }
+            
+            .product-description {
+                font-size: 0.9rem;
             }
             
             .product-actions {
                 flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .btn-product {
+                width: 100%;
+            }
+            
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .capability-card {
+                padding: 2rem;
+            }
+            
+            .standards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
             }
         }
         
         @media (max-width: 480px) {
+            .page-header {
+                padding: 4rem 0 2rem;
+            }
+            
             .page-title {
                 font-size: 2rem;
             }
             
+            .page-subtitle {
+                font-size: 1rem;
+            }
+            
+            .product-categories,
+            .product-gallery,
+            .export-capabilities,
+            .quality-standards {
+                padding: 2.5rem 0;
+            }
+            
+            .gallery-section {
+                margin-bottom: 2.5rem;
+            }
+            
+            .gallery-section-title {
+                font-size: 1.25rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .product-content {
+                padding: 1.25rem;
+            }
+            
+            .product-image {
+                height: 220px;
+            }
+            
             .modal-content {
                 padding: 1.5rem;
+                max-width: 95%;
+            }
+            
+            .modal-title {
+                font-size: 1.5rem;
+            }
+            
+            .standards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .section-subtitle {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -656,7 +972,7 @@
                 <button class="category-tab" data-category="bottles">Plastic Bottles</button>
                 <button class="category-tab" data-category="caps">Bottle Caps</button>
                 <button class="category-tab" data-category="barricades">Road Barricades</button>
-                <button class="category-tab" data-category="solar">Solar Floats</button>
+                <button class="category-tab" data-category="solar">Water Tank Base</button>
                 <button class="category-tab" data-category="pallets">Pallets & Sleeves</button>
                 <button class="category-tab" data-category="planters">Planters & Pots</button>
             </div>
@@ -665,7 +981,7 @@
                 <!-- Plastic Bottles -->
                 <div class="product-card scroll-reveal" data-category="bottles">
                     <div class="product-image">
-                        <img src="images/banner1.jpg" alt="Plastic Bottles" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="brochures/UCMPL_images_1/caps_and_bottles_and_jars.png" alt="Plastic Bottles" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Plastic Bottles</h3>
@@ -686,7 +1002,7 @@
                 <!-- Bottle Caps -->
                 <div class="product-card scroll-reveal" data-category="caps">
                     <div class="product-image">
-                        <img src="images/compack-400x400.jpg" alt="Bottle Caps" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="brochures/UCMPL_images_1/caps.png" alt="Bottle Caps" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Bottle Caps</h3>
@@ -707,7 +1023,7 @@
                 <!-- Road Barricades -->
                 <div class="product-card scroll-reveal" data-category="barricades">
                     <div class="product-image">
-                        <img src="images/latest_news_banner1.jpg" alt="Road Barricades" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="brochures/Ultracraft_images/road_barrier.png" alt="Road Barricades" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Road Barricades</h3>
@@ -725,17 +1041,17 @@
                     </div>
                 </div>
                 
-                <!-- HDPE Solar Floats -->
+                <!-- Water Tank Base -->
                 <div class="product-card scroll-reveal" data-category="solar">
                     <div class="product-image">
-                        <img src="images/homeb.jpg" alt="HDPE Solar Floats" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="brochures/Ultracraft_images/water_tank_base.png" alt="Water Tank Base" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">HDPE Solar Floats</h3>
-                        <p class="product-description">High-density polyethylene solar floats for renewable energy applications with excellent buoyancy and durability.</p>
+                        <h3 class="product-title">Water Tank Base</h3>
+                        <p class="product-description">Heavy-duty HDPE water tank bases engineered for excellent load distribution, outdoor durability, and UV resistance.</p>
                         <ul class="product-features">
-                            <li>UV resistant material</li>
-                            <li>Excellent buoyancy</li>
+                            <li>UV and weather resistant</li>
+                            <li>High load-bearing stability</li>
                             <li>Corrosion resistant</li>
                             <li>Long-lasting design</li>
                         </ul>
@@ -749,7 +1065,7 @@
                 <!-- Pallets & Sleeves -->
                 <div class="product-card scroll-reveal" data-category="pallets">
                     <div class="product-image">
-                        <img src="images/page-title-background.jpg" alt="Pallets & Sleeves" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="brochures/Ultracraft_images/double_side_pallets.png" alt="Pallets & Sleeves" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Pallets & Sleeves</h3>
@@ -770,7 +1086,7 @@
                 <!-- Planters & Pots -->
                 <div class="product-card scroll-reveal" data-category="planters">
                     <div class="product-image">
-                        <img src="images/ucmpl-certificate-400x400.jpg" alt="Planters & Pots" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="brochures/NewEspo_images/plastic_items.png" alt="Planters & Pots" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Planters & Pots</h3>
@@ -784,6 +1100,82 @@
                         <div class="product-actions">
                             <button class="btn btn-primary btn-product" onclick="openModal('planters')">View Details</button>
                             <span class="product-specs">HDPE/PP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="product-gallery">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Product Gallery</h2>
+                <p class="section-subtitle">Explore our comprehensive range of products through detailed brochures</p>
+            </div>
+            
+            <!-- Bottle Caps Gallery -->
+            <div class="gallery-section scroll-reveal">
+                <h3 class="gallery-section-title">Bottle Caps & Closures</h3>
+                <div class="products-grid">
+                    <div class="product-card gallery-card" onclick="openLightbox('brochures/UCMPL_images_1/caps.png')">
+                        <div class="product-image">
+                            <img src="brochures/UCMPL_images_1/caps.png" alt="Bottle Caps" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-card gallery-card" onclick="openLightbox('brochures/UCMPL_images_1/caps_and_bottles_and_jars.png')">
+                        <div class="product-image">
+                            <img src="brochures/UCMPL_images_1/caps_and_bottles_and_jars.png" alt="Caps and Bottles" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-card gallery-card" onclick="openLightbox('brochures/UCMPL_images_1/caps_and_bottles_and_jars_2.png')">
+                        <div class="product-image">
+                            <img src="brochures/UCMPL_images_1/caps_and_bottles_and_jars_2.png" alt="Caps and Jars" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Blow Molding Products Gallery -->
+            <div class="gallery-section scroll-reveal">
+                <h3 class="gallery-section-title">Blow Molding Products</h3>
+                <div class="products-grid">
+                    <div class="product-card gallery-card" onclick="openLightbox('brochures/Ultracraft_images/dustbin.png')">
+                        <div class="product-image">
+                            <img src="brochures/Ultracraft_images/dustbin.png" alt="Dustbin" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-card gallery-card" onclick="openLightbox('brochures/Ultracraft_images/water_tank_base.png')">
+                        <div class="product-image">
+                            <img src="brochures/Ultracraft_images/water_tank_base.png" alt="Water Tank Base" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-card gallery-card" onclick="openLightbox('brochures/Ultracraft_images/road_barrier.png')">
+                        <div class="product-image">
+                            <img src="brochures/Ultracraft_images/road_barrier.png" alt="Road Barrier" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-card gallery-card" onclick="openLightbox('brochures/Ultracraft_images/double_side_pallets.png')">
+                        <div class="product-image">
+                            <img src="brochures/Ultracraft_images/double_side_pallets.png" alt="Double Side Pallets" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ESPO Catalog Gallery -->
+            <div class="gallery-section scroll-reveal">
+                <h3 class="gallery-section-title">ESPO Catalog</h3>
+                <div class="products-grid">
+                    <div class="product-card gallery-card" onclick="openLightbox('brochures/NewEspo_images/tables.png')">
+                        <div class="product-image">
+                            <img src="brochures/NewEspo_images/tables.png" alt="ESPO Tables" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-card gallery-card" onclick="openLightbox('brochures/NewEspo_images/plastic_items.png')">
+                        <div class="product-image">
+                            <img src="brochures/NewEspo_images/plastic_items.png" alt="ESPO Plastic Items" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -887,6 +1279,14 @@
             <button class="modal-close" onclick="closeModal()">&times;</button>
             <h3 class="modal-title" id="modal-title">Product Details</h3>
             <p class="modal-description" id="modal-description">Detailed product information will be displayed here.</p>
+        </div>
+    </div>
+    
+    <!-- Image Lightbox Modal -->
+    <div class="image-lightbox" id="image-lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-image" src="" alt="Gallery Image">
         </div>
     </div>
 
@@ -1104,8 +1504,8 @@
                     description: 'Durable road barricades and traffic safety equipment for construction sites and road safety applications. Our barricades feature high visibility design, weather resistance, lightweight construction, and easy installation. Made from high-quality HDPE material, these barricades are perfect for construction and road safety applications.'
                 },
                 solar: {
-                    title: 'HDPE Solar Floats',
-                    description: 'High-density polyethylene solar floats for renewable energy applications with excellent buoyancy and durability. Our solar floats feature UV resistant material, excellent buoyancy, corrosion resistance, and long-lasting design. Perfect for solar panel installations and renewable energy applications.'
+                    title: 'Water Tank Base',
+                    description: 'Heavy-duty HDPE water tank bases engineered for excellent load distribution, outdoor durability, and UV resistance. Ideal for supporting water storage installations with long service life and minimal maintenance.'
                 },
                 pallets: {
                     title: 'Pallets & Sleeves',
@@ -1135,6 +1535,52 @@
                 closeModal();
             }
         });
+        
+        // Image Lightbox Functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            lightboxImage.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox(event) {
+            // If event is provided and click was on the image or lightbox-content, don't close
+            if (event) {
+                if (event.target.tagName === 'IMG' || event.target.classList.contains('lightbox-content')) {
+                    return;
+                }
+            }
+            
+            const lightbox = document.getElementById('image-lightbox');
+            if (lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closeModal();
+            }
+        });
+        
+        // Optimize image loading
+        if ('loading' in HTMLImageElement.prototype) {
+            // Browser supports native lazy loading
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.getAttribute('src');
+            });
+        } else {
+            // Fallback for browsers that don't support lazy loading
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
     </script>
 </body>
 </html>
